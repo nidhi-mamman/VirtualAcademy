@@ -1,0 +1,152 @@
+/* Gradient button like hero section */
+.view-all-category-btn {
+  background: linear-gradient(120deg, #73328e 0%, #5a276f 100%);
+  color: #fff!important;
+  border: none;
+  border-radius: 2rem;
+  padding: 0.75rem 2.2rem;
+  font-weight: 600;
+  font-size: 1.1rem;
+  box-shadow: 0 2px 12px 0 rgba(115, 50, 142, 0.12);
+  transition: box-shadow 0.3s, filter 0.3s;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.7rem;
+  outline: none;
+}
+.view-all-category-btn:hover, .view-all-category-btn:focus {
+  filter: brightness(1.08) saturate(1.2);
+  box-shadow: 0 4px 24px 0 #73328e55, 0 0 0 4px #e0c3fc55;
+}
+
+/* Glow effect for right side of category section */
+.category-glow-right {
+  position: relative;
+}
+.category-glow-right::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: -16px;
+  width: 80px;
+  height: 100%;
+  pointer-events: none;
+  background: radial-gradient(circle at right, #e0c3fc 0%, #73328e33 60%, transparent 100%);
+  opacity: 0;
+  transition: opacity 0.4s;
+  z-index: 2;
+}
+.category-glow-right.glow-active::after {
+  opacity: 1;
+}
+/* Allow navigation to overflow below cards */
+.ed-category5-card-wrap {
+  position: relative;
+  overflow: visible;
+  background:linear-gradient(120deg, rgb(152 89 179) 0%, rgb(223 153 252) 100%);
+}
+
+.ed-category5-card .item-text h3 a{
+  color: black!important;
+  text-decoration: none!important;
+}
+
+.ed-category5-card {
+  transition: box-shadow 0.2s, transform 0.2s;
+  box-shadow: 0 2px 12px 0 rgba(0, 0, 0, 0.04);
+  background: #fff;
+  border-radius: 24px;
+  padding: 32px 24px;
+  min-height: 340px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+}
+
+.swiper-slide-active .ed-category5-card {
+  transform: translateY(0) !important;
+}
+
+
+.ed-category5-card:hover {
+  transform: translateY(0px) !important;
+}
+
+
+/* Prevent Swiper slide overflow on hover */
+.swiper-slide {
+  overflow: visible !important;
+}
+
+/* Add padding to Swiper wrapper to prevent card translation from being cut off */
+
+/* Remove extra padding so all cards align flush like the rightmost card */
+.swiper-wrapper,
+.ed-category5-card-slide {
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+  box-sizing: border-box;
+}
+
+/* Remove default arrow-nav styles if any */
+.arrow-nav {
+  background: none;
+  box-shadow: none;
+  border: none;
+  padding: 0;
+}
+
+/* --- CATEGORY SVG ANIMATIONS --- */
+.cloud_move {
+  animation: cloudFloat 3s ease-in-out infinite alternate;
+}
+@keyframes cloudFloat {
+  from { transform: translateY(0); }
+  to { transform: translateY(-20px); }
+}
+
+.rotate_box_2 {
+  animation: rotateBox2 4s linear infinite;
+  transform-origin: 50% 50%;
+}
+@keyframes rotateBox2 {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.rotate_box {
+  animation: rotateBox 3.5s linear infinite reverse;
+  transform-origin: 50% 50%;
+}
+@keyframes rotateBox {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(-360deg); }
+}
+
+.bar_1, .bar_2 {
+  animation: barGrow 2.2s ease-in-out infinite alternate;
+  transform-origin: bottom center;
+}
+@keyframes barGrow {
+  0% { transform: scaleY(1); }
+  100% { transform: scaleY(1.12); }
+}
+
+.pen_tip {
+  animation: penTipBounce 1.8s cubic-bezier(.68,-0.55,.27,1.55) infinite alternate;
+  transform-origin: 50% 100%;
+}
+@keyframes penTipBounce {
+  0% { transform: translateY(0) scale(1); }
+  100% { transform: translateY(-8px) scale(1.08); }
+}
+
+.box_2, .box_3, .box_4, .box_5, .box_6, .box_7 {
+  animation: boxFloat 2.8s ease-in-out infinite alternate;
+}
+@keyframes boxFloat {
+  0% { transform: translateY(0); }
+  100% { transform: translateY(-12px); }
+}
