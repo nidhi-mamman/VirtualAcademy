@@ -506,7 +506,7 @@ const Slider = () => {
                             {/* <!-- AutoCAD --> */}
                             <div class="tech-card">
                                 <div class="tech-icon">
-                                    <img src="https://upload.wikimedia.org/wikipedia/commons/9/9c/AutoCad_new_logo.svg" alt="AutoCAD" />
+                                    <img src={autocad} alt="AutoCAD" />
                                 </div>
                                 <div class="tech-info">
                                     <span class="tech-name">AutoCAD</span>
@@ -518,7 +518,7 @@ const Slider = () => {
                             {/* <!-- SolidWorks --> */}
                             <div class="tech-card">
                                 <div class="tech-icon">
-                                    <img src="https://upload.wikimedia.org/wikipedia/commons/??/??/SolidWorks_Logo.svg" alt="SolidWorks" />
+                                    <img src={solidworks} alt="SolidWorks" />
                                 </div>
                                 <div class="tech-info">
                                     <span class="tech-name">SolidWorks</span>
@@ -530,7 +530,7 @@ const Slider = () => {
                             {/* <!-- CATIA --> */}
                             <div class="tech-card">
                                 <div class="tech-icon">
-                                    <img src="https://upload.wikimedia.org/wikipedia/commons/DS-CATIA-Logo.png" alt="CATIA" />
+                                    <img src={catia} alt="CATIA" />
                                 </div>
                                 <div class="tech-info">
                                     <span class="tech-name">CATIA</span>
@@ -542,7 +542,7 @@ const Slider = () => {
                             {/* <!-- Creo --> */}
                             <div class="tech-card">
                                 <div class="tech-icon">
-                                    <img src="https://upload.wikimedia.org/wikipedia/commons/.../PTC_Creo_logo.svg" alt="Creo" />
+                                    <img src={creo} alt="Creo" />
                                 </div>
                                 <div class="tech-info">
                                     <span class="tech-name">Creo</span>
@@ -554,7 +554,7 @@ const Slider = () => {
                             {/* <!-- Fusion 360 --> */}
                             <div class="tech-card">
                                 <div class="tech-icon">
-                                    <img src="https://upload.wikimedia.org/wikipedia/commons/.../Fusion360_Logo.svg" alt="Fusion 360" />
+                                    <img src={fusion} alt="Fusion 360" />
                                 </div>
                                 <div class="tech-info">
                                     <span class="tech-name">Fusion 360</span>
@@ -566,7 +566,7 @@ const Slider = () => {
                             {/* <!-- Revit --> */}
                             <div class="tech-card">
                                 <div class="tech-icon">
-                                    <img src="https://brandlogos.net/revit-logo-png-vector-format-101623.html" alt="Revit" />
+                                    <img src={revit} alt="Revit" />
                                 </div>
                                 <div class="tech-info">
                                     <span class="tech-name">Revit</span>

@@ -1,6 +1,6 @@
 // 24x7 Section styled like screenshot
 
-import React from "react";
+import React, { useEffect } from "react";
 import 'swiper/css';
 import 'swiper/css/navigation';
 import '../category-fix.css';
@@ -26,6 +26,9 @@ import Slider from "./slider";
 import Colleges from "./Colleges";
 
 const SoftwareEngineeringCourse = () => {
+  useEffect(()=>{
+    window.scrollTo(0,0)
+  },[])
 
   const Section24x7 = () => (
     <section className="section-24x7 py-5" style={{ background: '#f6f8fb' }}>
@@ -450,7 +453,7 @@ const SoftwareEngineeringCourse = () => {
         <div className="position-absolute top-0 start-0 w-100 h-100 noise-overlay" style={{ zIndex: 0, pointerEvents: "none" }} />
         <div ref={cursorRef} className="cursor-spot position-absolute" style={{ zIndex: 0 }} aria-hidden="true" />
 
-        <div className="container py-5 position-relative" style={{ zIndex: 1 }}>
+        <div className="container position-relative" style={{ zIndex: 1,paddingTop:"180px",paddingBottom:"50px" }}>
           <div className="row align-items-center g-5">
             <div className="col-lg-7 hero-fadein">
               {/* left content unchanged */}
@@ -2040,7 +2043,9 @@ const SoftwareEngineeringCourse = () => {
     </section>
   );
 
-  /** ---------------- MANAGEMENT TEAM (Slider: 4×2 per slide) ---------------- **/
+  /** ---------------- MANAGEMENT TEAM 
+   * 
+   ---------------- **/
   const TeamSection = () => {
 
     return (
@@ -2050,8 +2055,8 @@ const SoftwareEngineeringCourse = () => {
             <h2 id="teamHeading" className="fw-bold display-6 mb-2 text-dark">Our Management Team</h2>
             <div aria-hidden="true" className="mx-auto" style={{ width: 120, height: 12, background: "radial-gradient(60px 6px at 60px 6px, rgba(2,6,23,.25), rgba(2,6,23,.12) 60%, rgba(0,0,0,0) 61%)" }} />
           </div>
-          <div className="teamvtc-section" data-aos="fade-up">
-            <img src={team} alt="" className="img-fluid" />
+          <div className="teamvtc-section">
+            <img src={team} alt="" className="img-fluid"/>
           </div>
         </div>
       </section>

@@ -8,7 +8,18 @@ footer {
     color: white !important;
 }
 
+.header {
+    position: fixed;
+    z-index: 9999;
+    width: 100%;
+    top: 0;
+}
+
 .navbar {
+    position: fixed;
+    z-index: 9999;
+    width: 100%;
+    top: 40px;
     box-shadow: 2px 2px 4px grey !important;
 }
 
@@ -365,7 +376,7 @@ Font load
     --ed-gradient: linear-gradient(90deg, var(--ed-color-1) 0%, var(--ed-color-2)100%);
     --cube-1: cubic-bezier(0.55, 0.085, 0, 0.99);
     --cube-2: all .25s cubic-bezier(.645, .045, .355, 1);
-     --theme-color: #0B59DB;
+    --theme-color: #0B59DB;
     --theme-color2: #6653E8;
     --primary-color: #0B59DB;
     --title-color: #0B1422;
@@ -27997,7 +28008,11 @@ only screen and (min-width: 576px) and (max-width: 767px),
     pointer-events: none;
 }
 
-.teamvtc-section:hover {
+.teamvtc-section img {
+    transition: all 0.4s ease-in-out;
+}
+
+.teamvtc-section img:hover {
     transform: scale(1.02);
 }
 
@@ -28317,8 +28332,8 @@ only screen and (min-width: 576px) and (max-width: 767px),
     transform: scale(1.3)
 }
 
-.gallery-area{
-    padding-block:30px;
+.gallery-area {
+    padding-block: 30px;
 }
 
 .gallery-area .row {

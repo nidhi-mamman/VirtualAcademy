@@ -25,7 +25,7 @@ const Showallcourses = () => {
   return (
     <div>
       <section className="pb-9 py-md-8">
-        <div className="container">
+        <div className="container" style={{paddingTop:'150px'}}>
           <div className="row align-items-center mb-5" data-aos="fade-up">
             <div className="col-md mb-2 mb-md-0 text-center">
               <h1 className="mb-1">Featured Courses</h1>

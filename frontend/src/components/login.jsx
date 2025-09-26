@@ -1,4 +1,4 @@
-import React, { useContext, useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import usercontext from './Contextapi';
 
@@ -8,6 +8,7 @@ const Login = () => {
   const [error, setError] = useState('');
   const { setflag } = useContext(usercontext);
   const navigate = useNavigate();
+  useEffect(()=>{ window.scrollTo(0,0)},[])
 
   const handleSubmit = async (e) => {
     e.preventDefault();

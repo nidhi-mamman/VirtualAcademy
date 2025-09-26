@@ -70,7 +70,11 @@ function StatsAnimated() {
 }
 
 const Aboutus = () => {
+   useEffect(()=>{
+    window.scrollTo(0,0)
+   },[])
   return (
+    
     <div className="about-us-page">
       {/* Hero Banner Section with animated SVG background */}
       <section className="position-relative overflow-hidden header-gradient" style={{ color: "#fff", minHeight: "250px", display: 'flex', flexDirection: 'column', justifyContent: 'center' }}>
@@ -121,7 +125,7 @@ const Aboutus = () => {
           @keyframes moveEllipse2 { 0%{ transform: translateX(0); } 100%{ transform: translateX(-18px); } }
           @keyframes moveCircle1 { 0%{ transform: scale(1); } 100%{ transform: scale(1.12); } }
         `}</style>
-        <div className="container">
+        <div className="container" style={{paddingTop:"200px",paddingBottom:"50px"}}>
           <div className="row justify-content-center" style={{ position: 'relative', zIndex: 1 }}>
             <div className="col-lg-10 text-center">
               <h1 className="display-4 fw-bold mb-4 text-white">About TechCadd Virtual Academy</h1>
@@ -150,7 +154,7 @@ const Aboutus = () => {
       <section className="py-8 py-md-10">
         <div className="container">
           <div className="row align-items-center">
-            <div className="col-lg-6 mb-5 mb-lg-0" data-aos="fade-right" data-aos-duration="400">
+            <div className="col-lg-6 mb-5 mb-lg-0" data-aos="fade-right">
               <div className="pe-lg-5">
                 <h2 className="fw-bold mb-4">Our Mission</h2>
                 <p className="mb-4">
@@ -231,7 +235,7 @@ const Aboutus = () => {
       <section className="py-8 py-md-10">
         <div className="container">
           <div className="row align-items-center">
-            <div className="col-lg-6 order-lg-2 mb-5 mb-lg-0" data-aos="fade-left" data-aos-duration="400">
+            <div className="col-lg-6 order-lg-2 mb-5 mb-lg-0" data-aos="fade-left">
               <div className="ps-lg-5">
                 <h2 className="fw-bold mb-4">Beyond Education - Career Support</h2>
                 <p className="mb-4">
@@ -257,7 +261,7 @@ const Aboutus = () => {
                 </ul>
               </div>
             </div>
-            <div className="col-lg-6 order-lg-1" data-aos="fade-right" data-aos-duration="400">
+            <div className="col-lg-6 order-lg-1" data-aos="fade-right">
               <div className="about-career-img">
                 <img
                   src="https://images.unsplash.com/photo-1551288049-bebda4e38f71"
@@ -370,9 +374,7 @@ const Aboutus = () => {
         </div>
       </section>      {/* Global Styles */}
       <style jsx>{`
-        .about-hero {
-          background: linear-gradient(135deg, #3a7bd5 0%, #00d2ff 100%);
-        }
+       
         .icon-circle {
           display: inline-flex;
           align-items: center;
