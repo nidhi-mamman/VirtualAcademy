@@ -1,8 +1,15 @@
 // 24x7 Section styled like screenshot
 
 import React, { useEffect } from "react";
-import 'swiper/css';
-import 'swiper/css/navigation';
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Autoplay } from "swiper/modules";
+
+
+// Import Swiper styles
+import "swiper/css";
+import "swiper/css/effect-coverflow";
+import "swiper/css/navigation"; // only if you use navigation arrows
+
 import '../category-fix.css';
 import { useState } from "react";
 import { Link } from 'react-router-dom';
@@ -18,17 +25,32 @@ import o2 from "../images/o2.png";
 import o3 from "../images/o3.png";
 import o4 from "../images/o4.png";
 import whyus from '../images/whyus.jpeg'
-import { Swiper, SwiperSlide } from 'swiper/react';
-import { Navigation, Autoplay } from 'swiper/modules';
-import 'swiper/css/effect-coverflow';
 import Brands from './brands'
 import Slider from "./slider";
 import Colleges from "./Colleges";
+import CaseSwiper from "./CaseSwiper";
+
+// Import testimonial images
+import testi1 from "../images/testi1.png";
+import testi2 from "../images/testi2.png";
+import testi3 from "../images/testi3.png";
+import testi4 from '../images/testi4.png'
+import testi5 from '../images/testi5.png'
+import testi6 from '../images/testi6.png'
+import testi7 from '../images/testi7.png'
+import quoteIcon from "../images/testi-quote.svg";
 
 const SoftwareEngineeringCourse = () => {
-  useEffect(()=>{
-    window.scrollTo(0,0)
-  },[])
+
+  const [open, setOpen] = useState(false);
+  useEffect(() => {
+    window.scrollTo(0, 0)
+  }, [])
+
+
+  const scrollToTop = () => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  };
 
   const Section24x7 = () => (
     <section className="section-24x7 py-5" style={{ background: '#f6f8fb' }}>
@@ -453,7 +475,7 @@ const SoftwareEngineeringCourse = () => {
         <div className="position-absolute top-0 start-0 w-100 h-100 noise-overlay" style={{ zIndex: 0, pointerEvents: "none" }} />
         <div ref={cursorRef} className="cursor-spot position-absolute" style={{ zIndex: 0 }} aria-hidden="true" />
 
-        <div className="container position-relative" style={{ zIndex: 1,paddingTop:"180px",paddingBottom:"50px" }}>
+        <div className="container position-relative" style={{ zIndex: 1, paddingBlock:"40px"}}>
           <div className="row align-items-center g-5">
             <div className="col-lg-7 hero-fadein">
               {/* left content unchanged */}
@@ -648,94 +670,79 @@ const SoftwareEngineeringCourse = () => {
 
   /** ---------------- HIGHLIGHTS ---------------- **/
   const Highlights = () => {
-    // const navs = [
-    //   "Live Classes",
-    //   "Daily-Learning Modules",
-    //   "Specialized Tracks",
-    //   "Skill Development projects",
-    //   "Career support",
-    //   "Mock Interviews"
-    // ];
+
     const slidesData = [
       {
         img: "assets/img/category/category_1_1.jpg",
-        title: "Enhanced Cybersecurity",
-        desc: "Advanced security measures like firewalls, encryption,",
+        title: "Live Classes",
+        desc: "Interactive Real-Time Learning",
       },
       {
         img: "assets/img/category/category_1_2.jpg",
-        title: "Cloud Integration",
-        desc: "Access to scalable cloud-based services for storage",
+        title: "Daily Learning modules",
+        desc: "Structured Consistent Learning",
       },
       {
         img: "assets/img/category/category_1_3.jpg",
-        title: "Customized Services",
-        desc: "Tailored IT solutions designed to meet specific business needs.",
+        title: "Specailized Tracks",
+        desc: "Focused Skill Specialization",
       },
       {
         img: "assets/img/category/category_1_4.jpg",
-        title: "24/7 IT Support",
-        desc: "Around-the-clock monitoring and troubleshooting.",
+        title: "Skilled Development Projects",
+        desc: "Hands-On Practical Experience",
       },
       {
         img: "assets/img/category/category_1_5.jpg",
-        title: "End-to-End Solution",
-        desc: "Covers all aspects of IT, from consu-lting and planning",
+        title: "Career Support",
+        desc: "Guidance for Job Readiness",
       },
       {
-        img: "assets/img/category/category_1_1.jpg",
-        title: "Airbirds",
-        desc: "Advanced security measures like firewalls, encryption,",
-      },
-      {
-        img: "assets/img/category/category_1_2.jpg",
-        title: "Enhanced Cybersecurity",
-        desc: "Access to scalable cloud-based services for storage",
-      },
-      {
-        img: "assets/img/category/category_1_3.jpg",
-        title: "Hiking",
-        desc: "Tailored IT solutions designed to meet specific business needs.",
-      },
-      {
-        img: "assets/img/category/category_1_4.jpg",
-        title: "Cloud Integration",
-        desc: "Around-the-clock monitoring and troubleshooting.",
-      },
-      {
-        img: "assets/img/category/category_1_5.jpg",
-        title: "Cruises",
-        desc: "Covers all aspects of IT, from consu-lting and planning",
-      },
-      // Add more slides here if needed
+        img: "assets/img/category/mocktest.jpg",
+        title: "Mock Interviews",
+        desc: "Interview Preparation & Confidence Building",
+      }
     ];
     return (
-      <section className="category-area bg-top-center space overflow-hidden">
+      <section className="category-area bg-top-center space overflow-hidden py-5">
         <div className="container th-container">
-          <div className="title-area mb-60 text-center">
-            <span className="sub-title text-anime-style-2">Our Features</span>
-            <h2 className="sec-title text-anime-style-3">
-              Reliable IT for Unstoppable Growth
-            </h2>
+          <div className="text-center mb-2">
+            <div className="text-center mb-4" data-aos="fade-up">
+              <h2 id="teamHeading" className="fw-bold display-6 mb-2 text-dark">Our Higlights</h2>
+              <div aria-hidden="true" className="mx-auto" style={{ width: 120, height: 12, background: "radial-gradient(60px 6px at 60px 6px, rgba(2,6,23,.25), rgba(2,6,23,.12) 60%, rgba(0,0,0,0) 61%)" }} />
+            </div>
+            <p className="text-muted" data-aos="fade-up">
+              Reliable IT Company for growth
+            </p>
           </div>
-
           <Swiper
-            spaceBetween={30}
+            modules={[Autoplay]}
             loop={true}
-            loopFillGroupWithBlank={true}
-            breakpoints={{
-              0: { slidesPerView: 1 },
-              576: { slidesPerView: 1 },
-              768: { slidesPerView: 2 },
-              992: { slidesPerView: 3 },
-              1200: { slidesPerView: 3 },
-              1400: { slidesPerView: 3, spaceBetween: 45 },
+            spaceBetween={30}
+            autoplay={{
+              delay: 3000,
+              disableOnInteraction: false,
+              pauseOnMouseEnter: true,
             }}
-            className="mySwiper"
+            speed={800}
+            breakpoints={{
+              0: {
+                slidesPerView: 1,
+                centeredSlides: true,
+              },
+              768: {
+                slidesPerView: 2,
+                centeredSlides: false,
+              },
+              1024: {
+                slidesPerView: 3,
+                centeredSlides: false,
+              },
+            }}
           >
             {slidesData.map((slide, index) => (
               <SwiperSlide key={index}>
-                <div className="category-card single">
+                <div className="category-card">
                   <div className="box-img global-img">
                     <img src={slide.img} alt={slide.title} />
                   </div>
@@ -754,244 +761,26 @@ const SoftwareEngineeringCourse = () => {
 
   //------------------CATEGORY SECTION---------------------//
 
-  const categorySlides = [
-    {
-      title: 'Creative Web Design',
-      courses: '20+',
-      svg1: (
-        <svg width="88" height="243" viewBox="0 0 88 243" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <path className="bar_2" d="M43.68,87.35H87.35V242.55H43.68Z" fill="#4AD2CC" />
-          <path className="bar_1" d="M0,87.35H43.68V242.55H0Z" fill="#C3F498" />
-          <g className="pen_tip">
-            <path d="M43.6752 0L87.3505 87.3505H0L43.6752 0Z" fill="#FFDA8A" />
-            <path fillRule="evenodd" clipRule="evenodd" d="M62.3906 38.2161L43.2827 0.000244141L24.1747 38.2161H62.3906Z" fill="#050505" />
-          </g>
-        </svg>
-      ),
-      svg2: (
-        <svg className="cloud_move" width="198" height="200" viewBox="0 0 198 200" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <path d="M198.001 98.8149H99.0684V0C153.705 0 198.001 44.2167 198.001 98.7557V98.8149Z" fill="#2F584F" />
-          <path d="M99.0558 200C44.419 200 0.123047 155.783 0.123047 101.244V101.197H99.0558V200Z" fill="#4AD2CC" />
-          <path d="M99 200V99H198V99.0485C198.012 154.806 153.686 200 99 200Z" fill="#F38073" />
-          <path d="M99.0567 101.185H39.8965V101.161C39.8965 68.5469 66.3838 42.1069 99.0567 42.1069V101.185Z" fill="#FFDA8A" />
-          <path d="M99.0567 157.905C66.3838 157.905 39.8965 131.465 39.8965 98.8503V98.8267H99.0567V157.905Z" fill="#FFDA8A" />
-          <path d="M99 158.078C131.673 158.078 158.16 131.638 158.16 99.0237V99H99V158.078Z" fill="#EBEBEB" />
-        </svg>
-      ),
-    },
-    {
-      title: 'IT Apps & Software',
-      courses: '49+',
-      svg1: (
-        <svg width="173" height="254" viewBox="0 0 173 254" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <path d="M13.4023 132.796H86.5009V253.409L13.4023 132.796Z" fill="#FFDA8A" />
-          <path d="M159.598 132.796H86.4991V253.409L159.598 132.796Z" fill="#4AD2CC" />
-          <circle cx="86.5" cy="86.5" r="86.5" fill="#F38073" />
-          <circle cx="86.5008" cy="86.5001" r="57.2606" fill="white" />
-          <path d="M86.5 106C75.7335 106 67 97.2708 67 86.5096V86.4905C67 75.7292 75.7335 67 86.5 67C97.2665 67 106 75.7292 106 86.4905V86.5096C106 97.2708 97.2665 106 86.5 106Z" fill="#F78077" />
-        </svg>
-      ),
-      svg2: (
-        <svg width="181" height="120" viewBox="0 0 181 120" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <g className="box_2">
-            <path d="M180.012 107.99L180.012 0L60.0213 -5.24495e-06L60.0213 119.99L168.012 119.99C174.639 119.99 180.012 114.618 180.012 107.99Z" fill="#2F584F" />
-            <path d="M120.012 60C153.151 60 180.012 33.1392 180.012 0L60.0117 -5.24537e-06C60.0117 33.1392 86.8725 60 120.012 60Z" fill="#4AD2CC" />
-            <path d="M120.012 120C153.151 120 180.012 93.1392 180.012 60L60.0117 60C60.0117 93.1392 86.8725 120 120.012 120Z" fill="white" />
-            <path d="M60.0117 120L60.0117 60L0.0117264 60L0.0117238 120L60.0117 120Z" fill="#FF9960" />
-          </g>
-          <path d="M30 90C30 73.4304 16.5696 60 0 60L0 120C16.5696 120 30 106.57 30 90Z" fill="white" />
-          <path d="M119.998 90C136.568 90 149.998 76.5696 149.998 60L89.9981 60C89.9981 76.5696 103.428 90 119.998 90Z" fill="#FFDA8A" />
-        </svg>
-      ),
-    },
-    {
-      title: 'Web Design Development',
-      courses: '20+',
-      svg1: (
-        <svg width="82" height="82" viewBox="0 0 82 82" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <path d="M81.7034 81.6846V0.0205078H81.6641C36.5641 0.0205078 0 36.5846 0 81.6846H81.7034Z" fill="#F6F1E1" />
-          <path d="M81.7025 81.6839V37.9951H81.6829C57.5551 37.9951 37.9941 57.5561 37.9941 81.6839H81.7025Z" fill="#F38073" />
-        </svg>
-      ),
-      svg2: (
-        <svg width="210" height="165" viewBox="0 0 210 165" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <g className="rotate_box_2">
-            <path d="M127.348 0.703125H45.6836V82.4163H127.348V0.703125Z" fill="#F38073" />
-            <path d="M127.348 82.4065H45.6836V82.3673C45.6836 37.2673 82.2477 0.703125 127.348 0.703125V82.4065Z" fill="white" />
-            <path d="M209.022 82.4075H127.357V0.694336C172.457 0.694336 209.022 37.2585 209.022 82.3585V82.4075Z" fill="#2F584F" />
-            <path d="M127.348 164.12C82.2477 164.12 45.6836 127.556 45.6836 82.4562V82.417H127.348V164.12Z" fill="#4AD2CC" />
-            <path d="M127.348 164.12V82.4072H209.012V82.4464C209.022 127.556 172.457 164.12 127.348 164.12Z" fill="#F38073" />
-            <path d="M127.347 82.4062H78.5137V82.3866C78.5137 55.4167 100.378 33.5527 127.347 33.5527V82.4062Z" fill="#2F584F" />
-            <path d="M127.348 128.664V82.417H173.575V82.4366C173.575 107.966 152.877 128.664 127.348 128.664Z" fill="#F6F1E1" />
-            <path d="M127.347 131.27C100.378 131.27 78.5137 109.406 78.5137 82.4366V82.417H127.347V131.27Z" fill="#F7B643" />
-          </g>
-          <g className="rotate_box">
-            <path d="M19.5 46C8.73348 46 0 37.2708 0 26.5096V26.4905C0 15.7292 8.73348 7 19.5 7C30.2665 7 39 15.7292 39 26.4905V26.5096C39 37.2708 30.2665 46 19.5 46Z" fill="#F78077" />
-          </g>
-        </svg>
-      ),
-    },
-    {
-      title: 'UI/UX Design',
-      courses: '14+',
-      svg1: (
-        <svg width="162" height="162" viewBox="0 0 162 162" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <path className="box_3" d="M161.998 80.999C161.998 61.956 155.289 43.5218 143.048 28.934C130.807 14.3461 113.818 4.53746 95.0646 1.23061C76.3109 -2.07625 56.9917 1.33016 40.4999 10.8516C24.0081 20.373 11.3983 35.4006 4.88504 53.2952C-1.62819 71.1897 -1.62835 90.807 4.88459 108.702C11.3975 126.596 24.0071 141.624 40.4987 151.146C56.9904 160.667 76.3096 164.074 95.0633 160.768C113.817 157.461 130.806 147.653 143.047 133.065L80.999 80.999H161.998Z" fill="#4AD2CC" />
-          <circle cx="80.9989" cy="80.9989" r="51.4032" fill="white" />
-          <circle className="box_4" cx="80.9998" cy="80.9989" r="17.1346" fill="#F38073" />
-        </svg>
-      ),
-      svg2: (
-        <svg width="198" height="200" viewBox="0 0 198 200" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <path d="M198 0H98V100H198V0Z" fill="#2F584F" />
-          <path className="box_7" d="M147.351 50C147.351 22.384 125.257 0 98 0V100C125.257 100 147.351 77.616 147.351 50Z" fill="#FFDA8A" />
-          <path d="M198 100H98V200H186C192.627 200 198 194.627 198 188V100Z" fill="white" />
-          <path className="box_5" d="M98 200V100H198C198 155.232 153.232 200 98 200Z" fill="#F38073" />
-          <path d="M98 100H0V200H98V100Z" fill="#2F584F" />
-          <path className="box_6" d="M0 100H98V200C43.8726 200 0 155.232 0 100Z" fill="#F38073" />
-        </svg>
-      ),
-    },
-    {
-      title: 'Responsive Web Design',
-      courses: '49+',
-      svg1: (
-        <svg width="89" height="208" viewBox="0 0 89 208" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <path d="M89 208C39.8487 208 0 168.17 0 119.043V119H89V208Z" fill="#4AD2CC" />
-          <path d="M89 172C59.7293 172 36 148.28 36 119.021V119H89V172Z" fill="#F7B643" />
-          <path d="M18,44.21H36V119.05H18Z" fill="#F38073" />
-          <path d="M0,44.21H18V119.05H0Z" fill="#4AD2CC" />
-          <path fillRule="evenodd" clipRule="evenodd" d="M18 0L2.45464 19.0908C0.866924 21.0406 0 23.5169 0 26.0314C0 35.9725 8.05887 44.2105 18 44.2105V0Z" fill="#F38073" />
-          <path fillRule="evenodd" clipRule="evenodd" d="M17.998 0.00239857L18 0L33.5454 19.0908C35.1331 21.0406 36 23.5169 36 26.0314C36 35.9725 27.9411 44.2105 18 44.2105C17.9993 44.2105 17.9987 44.2105 17.998 44.2105V0.00239857Z" fill="#4AD2CC" />
-        </svg>
-      ),
-      svg2: (
-        <svg width="181" height="180" viewBox="0 0 181 180" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <path d="M2.01367 180V91H90.0137V91.0427C90.0242 140.175 50.6233 180 2.01367 180Z" fill="#F38073" />
-          <path d="M1.01367 141V91H51.0137V91.0212C51.0137 118.622 28.6266 141 1.01367 141Z" fill="#F6F1E1" />
-          <path d="M180.014 0H89.0137V91H180.014V0Z" fill="#2F584F" />
-          <path d="M89.0137 180V91H180.014C180.014 140.156 139.275 180 89.0137 180Z" fill="#2F584F" />
-          <path d="M89.0137 142V91H142.014C142.014 119.168 118.287 142 89.0137 142Z" fill="#F38073" />
-          <path d="M89.0137 0H0.0136719V91H89.0137V0Z" fill="#C3F498" />
-          <path d="M0.0136719 0H89.0137V91C39.8572 91 0.0136719 50.2611 0.0136719 0Z" fill="#F38073" />
-        </svg>
-      ),
-    },
-  ];
 
-  function CategorySection() {
-    const [glow, setGlow] = React.useState(false);
-    React.useEffect(() => {
-      if (glow) {
-        const timeout = setTimeout(() => setGlow(false), 1200);
-        return () => clearTimeout(timeout);
-      }
-    }, [glow]);
-    return (
-      <section id="ed-category5" className="ed-category5-sec position-relative mt-5" >
-        <span className="ed-cate-shape1 right_view position-absolute">
-          <img src="/images/line-shape1.svg" alt="" />
-        </span>
-        <span className="ed-cate-shape2 top_view position-absolute">
-          <img src="/images/line-shape2.svg" alt="" />
-        </span>
-        <div className="container">
-          <div className="ed-category5-content">
-            <div className="ed-category5-text" data-aos="fade-right">
-              <div className="ed-sec-title-5 ed-text headline-5 pera-content">
-                <div className="subtitle wow fadeInRight" data-wow-delay="300ms" data-wow-duration="1500ms">Category</div>
-                <h2 className="sec_title ed-sec-tt-anim ed-has-anim">
-                  <span>Start Exploring:</span> Find Your Perfect Category
-                </h2>
-                <p>Start exploring the world of education and unlock endless learning opportunities. Find the perfect category that matches your passion and goals!</p>
-              </div>
-              <div className="mt-30">
-                <button
-                  type="button"
-                  className="view-all-category-btn"
-                  onClick={() => setGlow(true)}
-                >
-                  <span className="b-text">
-                    <Link to="/showallcourses" style={{ textDecoration: 'none', color: 'inherit' }}>
-                      View All Category
-                    </Link></span>
-                  <span className="b-icon" style={{ display: 'flex', alignItems: 'center' }}>
-                    <svg width="16" height="16" viewBox="0 0 10 10" fill="none" xmlns="http://www.w3.org/2000/svg">
-                      <path d="M1.66619 0.833333C1.66619 0.61232 1.75399 0.400358 1.91027 0.244078C2.06655 0.0877975 2.27851 0 2.49953 0H9.16619C9.38721 0 9.59917 0.0877975 9.75545 0.244078C9.91173 0.400358 9.99953 0.61232 9.99953 0.833333V7.5C9.99953 7.72101 9.91173 7.93297 9.75545 8.08926C9.59917 8.24554 9.38721 8.33333 9.16619 8.33333C8.94518 8.33333 8.73322 8.24554 8.57694 8.08926C8.42066 7.93297 8.33286 7.72101 8.33286 7.5V2.845L1.42203 9.75583C1.26486 9.90763 1.05436 9.99163 0.835858 9.98973C0.617361 9.98783 0.40835 9.90019 0.253844 9.74568C0.0993368 9.59118 0.0116958 9.38216 0.00979713 9.16367C0.00789844 8.94517 0.0918941 8.73467 0.243692 8.5775L7.15453 1.66667H2.49953C2.27851 1.66667 2.06655 1.57887 1.91027 1.42259C1.75399 1.26631 1.66619 1.05435 1.66619 0.833333Z" fill="#FF9960"></path>
-                    </svg>
-                  </span>
-                </button>
-              </div>
-            </div>
-            <div className={`ed-category5-card-wrap position-relative category-glow-right${glow ? ' glow-active' : ''}`} data-aos="fade-left">
-              <Swiper
-                modules={[Navigation, Autoplay]}
-                navigation={{
-                  nextEl: '.ed-ct-next',
-                  prevEl: '.ed-ct-prev',
-                }}
-                autoplay={{
-                  delay: 2500,
-                  disableOnInteraction: false
-                }}
-                spaceBetween={30}
-                slidesPerView={3}
-                loop={true}
-                className="ed-category5-card-slide"
-                breakpoints={{
-                  0: { slidesPerView: 1 },
-                  768: { slidesPerView: 2 },
-                  1200: { slidesPerView: 3 },
-                }}
-                style={{ cursor: 'pointer' }}
-              >
-                {categorySlides.map((slide, idx) => (
-                  <SwiperSlide key={idx}>
-                    <div
-                      className="ed-category5-card swiper-scale-effect"
-                      style={{
-                        marginTop: idx % 2 === 0 ? 0 : 60,
-                        marginBottom: idx % 2 === 0 ? 60 : 0,
-                        transition: 'margin 0.3s',
-                      }}
-                    >
-                      <div className="item-text headline-5">
-                        <div className="title-icon d-flex justify-content-between align-items-center">
-                          <h3 className="href-underline" style={{ margin: 0 }}>
-                            <span>{slide.title}</span>
-                          </h3>
-                          <div className="arrow-icon">
-                            <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
-                              <g opacity="0.24" clipPath="url(#clip0_137_450)">
-                                <path d="M0 35.7656L29.7782 5.98781H10.3345V0H40V29.6655H34.0122V10.2219L4.23438 40L0 35.7656Z" fill="#2F584F" />
-                              </g>
-                              <defs>
-                                <clipPath id="clip0_137_450">
-                                  <rect width="40" height="40" fill="white" />
-                                </clipPath>
-                              </defs>
-                            </svg>
-                          </div>
-                        </div>
-                      </div>
-                      <div className="item-icon d-flex justify-content-end align-items-end">
-                        <div className="ct_icon_1">{slide.svg1}</div>
-                        <div className="ct_icon_2">{slide.svg2}</div>
-                      </div>
-                    </div>
-                  </SwiperSlide>
-                ))}
-              </Swiper>
-              <div className="ed-ct-nav">
-                <div className="ed-ct-next arrow-nav d-flex justify-content-center align-items-center"><i className="fa-solid fa-arrow-right"></i></div>
-                <div className="ed-ct-prev arrow-nav d-flex justify-content-center align-items-center"><i className="fa-solid fa-arrow-left"></i></div>
-              </div>
+  const CategorySection = () => (
+    <div className="case-area position-relative overflow-hidden space">
+      <div className="container">
+        <div className="row justify-content-center">
+          <div className="col-xl-12">
+            <div className="title-area case-title-box text-center text-xl-center"><span
+              className="sub-title text-anime-style-2">Our Popular Categories</span>
+              <h2 className="sec-title text-anime-style-3 fs-1 fw-bolder">Virtual Academy-Career-Ready IT Courses</h2>
+              <p style={{ fontSize: "18px", width: "100%" }}>Explore our industry-focused IT courses designed to equip you with practical skills, certifications, and hands-on experience for a successful tech career.</p>
             </div>
           </div>
+          <div className="col-xl-12">
+            <CaseSwiper />
+          </div>
         </div>
-      </section>
-    );
-  }
+      </div>
+    </div>
+
+  )
 
 
   /** ---------------- PLACEMENT FOCUSED CURRICULUM (NEW) ---------------- **/
@@ -1434,7 +1223,7 @@ const SoftwareEngineeringCourse = () => {
       <section className="py-5 bg-white" id="curriculum" style={{ minWidth: 0 }} >
         <div className="container" style={{ minWidth: 0 }}>
           <div className="text-center mb-2">
-            <div className="text-center mb-4"data-aos="fade-up">
+            <div className="text-center mb-4" data-aos="fade-up">
               <h2 id="teamHeading" className="fw-bold display-6 mb-2 text-dark">Placement Focused Curriculum</h2>
               <div aria-hidden="true" className="mx-auto" style={{ width: 120, height: 12, background: "radial-gradient(60px 6px at 60px 6px, rgba(2,6,23,.25), rgba(2,6,23,.12) 60%, rgba(0,0,0,0) 61%)" }} />
             </div>
@@ -1668,64 +1457,120 @@ const SoftwareEngineeringCourse = () => {
   );
 
   /** ---------------- TESTIMONIALS ---------------- **/
-  const Testimonials = () => (
-    <section className="py-5" id="review" style={{ backgroundColor: "#fff!important" }}>
-      <div className="container">
-        <div className="text-center mb-5">
-          <div className="text-center mb-4">
-            <h2 id="teamHeading" className="fw-bold display-6 mb-2 text-dark">Student Success Stories</h2>
-            <div aria-hidden="true" className="mx-auto" style={{ width: 120, height: 12, background: "radial-gradient(60px 6px at 60px 6px, rgba(2,6,23,.25), rgba(2,6,23,.12) 60%, rgba(0,0,0,0) 61%)" }} />
+  const testimonials = [
+    {
+      name: "Harsh",
+      role: "Data Analytics",
+      image: testi2,
+      review:
+        "“The Data Analytics training at Techcadd taught me Excel,Power Bi and Python for analysis.The practical approach made learning very effective.",
+    },
+    {
+      name: "Payal",
+      role: "Digital Marketing",
+      image: testi1,
+      review:
+        "“Thanks to Techcadd's Digital marketing Course.I now manage campaigns independently and started working with local businesses.”",
+    },
+    {
+      name: "Bharti",
+      role: "Full Stack Developer",
+      image: testi7,
+      review:
+        "“I learned Full Stack Web Development at TechCadd.From front-end to back-end,everything was taught step by step with real projects.”",
+    },
+    {
+      name: "Geet",
+      role: "Data Science",
+      image: testi3,
+      review:
+        "“I joined TechCadd for Data Science.The machine learning modules and real-world projects gave me great industry-level knowledge.”",
+    },
+    {
+      name: "Maithili",
+      role: "Digital Marketing",
+      image: testi4,
+      review:
+        "“I joined TechCadd for Digital Marketing.The SEO and social media strategies were taught practically which boosted my confidence a lot.”",
+    },
+    {
+      name: "Rohit",
+      role: "Digital Marketing",
+      image: testi5,
+      review:
+        "“The Digital Marketing course at TechCadd gave me real exposure to campaigns,SEO tools and paid ads.IT helped me get my first freelance projects.”",
+    },
+    {
+      name: "Naini Bala",
+      role: "Graphic Designer",
+      image: testi6,
+      review:
+        "“TechCadd's Graphic Designing course improved my creative skills with Photoshop,Illustrator and CorelDraw.I now work as a freelancer designer.”",
+    },
+  ];
+
+  const Testimonials = () => {
+    return (
+      <section className="testi-area overflow-hidden space py-5" id="testi-sec">
+        <div className="container-fluid p-0">
+          <div className="title-area mb-20 text-center">
+            <span className="sub-title text-anime-style-2 fs-1">Testimonial</span>
+            <h2 className="sec-title text-anime-style-3">What Client Say About us</h2>
           </div>
-          <p className="text-muted mx-auto" style={{ maxWidth: 720 }}>
-            Hear from engineers who used the program to switch to product-based roles.
-          </p>
+
+          <div className="slider-area">
+            <Swiper
+              modules={[Autoplay]}
+              loop={true}
+              spaceBetween={30}
+              autoplay={{
+                delay: 3000,
+                disableOnInteraction: false,
+                pauseOnMouseEnter: true,
+              }}
+              speed={800}
+              centeredSlides={true}
+              breakpoints={{
+                0: { slidesPerView: 1 },
+                767: { slidesPerView: 1, centeredSlides: true },
+                992: { slidesPerView: 2, centeredSlides: true },
+                1200: { slidesPerView: 3, centeredSlides: true },
+                1400: { slidesPerView: 3, centeredSlides: true, spaceBetween: 5 },
+              }}
+              className="th-slider testiSlider1 has-shadow"
+            >
+              {testimonials.map((item, index) => (
+                <SwiperSlide key={index}>
+                  <div className="testi-card">
+                    <div className="testi-card_wrapper">
+                      <div className="testi-card_profile">
+                        <div className="testi-card_avater">
+                          <img src={item.image} alt={item.name} />
+                        </div>
+                        <div className="media-body">
+                          <h3 className="box-title">{item.name}</h3>
+                          <span className="testi-card_desig">{item.role}</span>
+                        </div>
+                      </div>
+                      <div className="testi-card_review">
+                        {[...Array(5)].map((_, i) => (
+                          <i className="fa-solid fa-star" key={i}></i>
+                        ))}
+                      </div>
+                    </div>
+                    <p className="testi-card_text">{item.review}</p>
+                    <div className="testi-card-quote">
+                      <img src={quoteIcon} alt="quote" />
+                    </div>
+                  </div>
+                </SwiperSlide>
+              ))}
+            </Swiper>
+          </div>
         </div>
-
-        <div className="row g-4">
-          {[
-            {
-              name: "Priya Sharma",
-
-              quote:
-                "I finished the Digital Marketing Course recently and it was a game-changer for my career. The training was completely practical, with step-by-step guidance on SEO, social media, and Google Ads. I now feel confident to work on real projects."
-            },
-            {
-              name: "Rahul Verma",
-
-              quote:
-                "The Web Designing Course was exactly what I needed. The trainers explained HTML, CSS, and JavaScript in a very simple way. I especially loved working on live projects which helped me build my own portfolio."
-            },
-            {
-              name: "Anjali Patel",
-
-              quote:
-                "I joined the Cyber Security Course and the hands-on training made all the difference. From ethical hacking to network security, everything was explained clearly. This course has prepared me for a strong career in IT security. ",
-            },
-          ].map((t, i) => (
-            <div className="col-md-6 col-lg-4" key={i}>
-              <figure className="p-4 m-0 h-100 bg-white rounded-4 border shadow-sm">
-                <div className="d-flex align-items-center mb-3">
-                  <figcaption>
-                    <div className="fw-semibold">{t.name}</div>
-                  </figcaption>
-                </div>
-                <blockquote className="mb-0" style={{ textAlign: "justify" }}>"{t.quote}"</blockquote>
-                <div class="item-rate ul-li">
-                  <ul>
-                    <li style={{ color: "#ffd500" }}><i class="fa-solid fa-star"></i></li>
-                    <li style={{ color: "#ffd500" }}><i class="fa-solid fa-star"></i></li>
-                    <li style={{ color: "#ffd500" }}><i class="fa-solid fa-star"></i></li>
-                    <li style={{ color: "#ffd500" }}><i class="fa-solid fa-star"></i></li>
-                    <li style={{ color: "#ffd500" }}><i class="fa-solid fa-star"></i></li>
-                  </ul>
-                </div>
-              </figure>
-            </div>
-          ))}
-        </div>
-      </div>
-    </section>
-  );
+      </section>
+    );
+  }
 
   /** ---------------- UNIQUE FEATURES ---------------- **/
   const UniqueFeatures = () => (
@@ -1839,7 +1684,7 @@ const SoftwareEngineeringCourse = () => {
   const FAQ = () => (
     <section id="faq" className="py-5" >
       <div className="container">
-        <div className="text-center mb-5" data-aos="fade-up"> 
+        <div className="text-center mb-5">
           <div className="text-center mb-4">
             <h2 id="teamHeading" className="fw-bold display-6 mb-2 text-dark">Frequently Asked Questions</h2>
             <div aria-hidden="true" className="mx-auto" style={{ width: 120, height: 12, background: "radial-gradient(60px 6px at 60px 6px, rgba(2,6,23,.25), rgba(2,6,23,.12) 60%, rgba(0,0,0,0) 61%)" }} />
@@ -1848,11 +1693,11 @@ const SoftwareEngineeringCourse = () => {
         </div>
 
         <div className="row g-4">
-          <div className="col-lg-6" data-aos="fade-up">
+          <div className="col-lg-6" >
             <img src={faq} style={{ height: "100%", width: "100%", objectFit: "cover" }} alt="FAQ illustration" />
           </div>
 
-          <div className="col-lg-6" data-aos="fade-up">
+          <div className="col-lg-6">
             <div className="accordion" id="faqAccordion2">
               {[
                 ["What is Virtual Academy ?", " Virtual Academy: Personalized Learning to Accelerate Your Computer science Career."],
@@ -1896,8 +1741,6 @@ const SoftwareEngineeringCourse = () => {
       </div>
     </section>
   );
-
-
 
   function CoursesSection() {
     const [courses, setCourses] = React.useState([]);
@@ -2043,20 +1886,18 @@ const SoftwareEngineeringCourse = () => {
     </section>
   );
 
-  /** ---------------- MANAGEMENT TEAM 
-   * 
-   ---------------- **/
+  /** ---------------- MANAGEMENT TEAM ---------------- **/
   const TeamSection = () => {
 
     return (
       <section className="py-5 team-section" aria-labelledby="teamHeading">
         <div className="container">
-          <div className="text-center mb-4" data-aos="fade-up">
+          <div className="text-center mb-4">
             <h2 id="teamHeading" className="fw-bold display-6 mb-2 text-dark">Our Management Team</h2>
             <div aria-hidden="true" className="mx-auto" style={{ width: 120, height: 12, background: "radial-gradient(60px 6px at 60px 6px, rgba(2,6,23,.25), rgba(2,6,23,.12) 60%, rgba(0,0,0,0) 61%)" }} />
           </div>
           <div className="teamvtc-section">
-            <img src={team} alt="" className="img-fluid"/>
+            <img src={team} alt="" className="img-fluid" />
           </div>
         </div>
       </section>
@@ -2065,7 +1906,7 @@ const SoftwareEngineeringCourse = () => {
 
   const WhyUsSection = () => (
     <section className="py-5">
-      <div className="text-center mb-5" data-aos="fade-up">
+      <div className="text-center mb-5">
         <h2 id="teamHeading" className="fw-bold display-6  text-dark">About Us</h2>
         <div aria-hidden="true" className="mx-auto" style={{ width: 120, height: 12, background: "radial-gradient(60px 6px at 60px 6px, rgba(2,6,23,.25), rgba(2,6,23,.12) 60%, rgba(0,0,0,0) 61%)" }} />
       </div>
@@ -2136,7 +1977,7 @@ const SoftwareEngineeringCourse = () => {
   const Gallery = () => (
     <div class="gallery-area overflow-hidden">
       <div class="container th-container">
-        <div className="text-center mb-4" data-aos="fade-up">
+        <div className="text-center mb-4">
           <h2 id="teamHeading" className="fw-bold display-6 mb-2 text-dark">Our Gallery</h2>
           <div aria-hidden="true" className="mx-auto" style={{ width: 120, height: 12, background: "radial-gradient(60px 6px at 60px 6px, rgba(2,6,23,.25), rgba(2,6,23,.12) 60%, rgba(0,0,0,0) 61%)" }} />
         </div>
@@ -2205,6 +2046,155 @@ const SoftwareEngineeringCourse = () => {
     </div>
   )
 
+  const EventSection = () => {
+
+    return (
+      <section className="py-5 team-section" aria-labelledby="teamHeading">
+        <div className="container">
+          <div className="text-center mb-4" data-aos="fade-up">
+            <h2 id="teamHeading" className="fw-bold display-6 mb-2 text-dark">
+              Event & Learning Sessions
+            </h2>
+            <div
+              aria-hidden="true"
+              className="mx-auto"
+              style={{
+                width: 120,
+                height: 12,
+                background:
+                  "radial-gradient(60px 6px at 60px 6px, rgba(2,6,23,.25), rgba(2,6,23,.12) 60%, rgba(0,0,0,0) 61%)",
+              }}
+            />
+          </div>
+          <Swiper
+            spaceBetween={30}
+            style={{ width: "100%", paddingBottom: "50px" }}
+            modules={[Autoplay]}
+            autoplay={{
+              delay: 3000,          // 3s delay between slides
+              disableOnInteraction: false, // keeps autoplay running after user swipes
+              pauseOnMouseEnter: true,     // pause when hovered (optional)
+            }}
+            speed={800}             // transition speed (ms) — smooth effect
+            breakpoints={{
+              0: {
+                slidesPerView: 1,
+                centeredSlides: true,
+              },
+              768: {
+                slidesPerView: 2,
+                centeredSlides: false,
+              },
+              1024: {
+                slidesPerView: 3,
+                centeredSlides: false,
+              },
+            }}
+
+          >
+            <SwiperSlide>
+              <div className="card">
+                <div className="box-img global-img">
+                  <img src="/assets/img/events/event_1_1.JPG" style={{ height: "250px" }} />
+                </div>
+                <div className="card-body">
+                  <h5 className="card-title event-title">Career Awareness</h5>
+                  <p className="card-text event-text">College:A & M</p>
+                  <h4 className="event-topics">Topic: Career Awareness</h4>
+                  <p className="event-desc">Guidance on career paths,opportunities and growth</p>
+                </div>
+              </div>
+            </SwiperSlide>
+
+            <SwiperSlide>
+              <div className="card" >
+                <div className="box-img global-img">
+                  <img src="/assets/img/events/event_1_2.JPG" style={{ height: "250px" }} />
+                </div>
+                <div className="card-body">
+                  <h5 className="card-title event-title">Career Awareness</h5>
+                  <p className="card-text">College:Rayat Bahra University</p>
+                  <h4>Topic: Career Awareness</h4>
+                  <p>Guidance on career paths,opportunities and growth</p>
+                </div>
+
+
+              </div>
+            </SwiperSlide>
+
+            <SwiperSlide>
+              <div className="card" >
+                <div className="box-img global-img">
+                  <img src="/assets/img/events/event_1_3.JPG" style={{ height: "250px" }} />
+                </div>
+                <div className="card-body">
+                  <h5 className="card-title event-title">Career Awareness</h5>
+                  <p className="card-text">College:D.A.V College,Hoshiarpur</p>
+                  <h4>Topic: Career Awareness</h4>
+                  <p>Guidance on career paths,opportunities and growth</p>
+                </div>
+
+
+              </div>
+            </SwiperSlide>
+            <SwiperSlide>
+              <div className="card">
+                <div className="box-img global-img">
+                  <img src="/assets/img/events/event_1_4.JPG" style={{ height: "250px" }} />
+                </div>
+                <div className="card-body">
+                  <h5 className="card-title event-title">Career Awareness</h5>
+                  <p className="card-text">College:DAVIET,Jalandhar</p>
+                  <h4>Topic: Career Awareness</h4>
+                  <p>Guidance on career paths,opportunities and growth</p>
+                </div>
+              </div>
+            </SwiperSlide>
+            <SwiperSlide>
+              <div className="card" >
+                <div className="box-img global-img">
+                  <img src="/assets/img/events/event_1_5.JPG" style={{ height: "250px" }} />
+                </div>
+                <div className="card-body">
+                  <h5 className="card-title event-title">Career Awareness</h5>
+                  <p className="card-text">College:Pyramid college of business & technology,Phagwara</p>
+                  <h4>Topic: Career Awareness</h4>
+                  <p>Guidance on career paths,opportunities and growth</p>
+                </div>
+              </div>
+            </SwiperSlide>
+            <SwiperSlide>
+              <div className="card" >
+                <div className="box-img global-img">
+                  <img src="/assets/img/events/event_1_6.JPG" style={{ height: "250px" }} />
+                </div>
+                <div className="card-body">
+                  <h5 className="card-title event-title">Technology</h5>
+                  <p className="card-text">College:Sant Longowal Institute of Engineering & Technology(SLIET),Longowal</p>
+                  <h4>Topic: Technology</h4>
+                  <p>Focused seminar on emerging technology trends</p>
+                </div>
+              </div>
+            </SwiperSlide>
+            <SwiperSlide>
+              <div className="card" >
+                <div className="box-img global-img">
+                  <img src="/assets/img/events/event_1_7.jpg" style={{ height: "250px" }} />
+                </div>
+                <div className="card-body">
+                  <h5 className="card-title event-title">Career Awareness</h5>
+                  <p className="card-text">College:APEEJAY college,Jalandhar</p>
+                  <h4>Topic: Career Awareness</h4>
+                  <p>Guidance on career paths,opportunities and growth</p>
+                </div>
+              </div>
+            </SwiperSlide>
+          </Swiper>
+        </div>
+      </section>
+    );
+  }
+
   return (
     <>
 
@@ -2243,22 +2233,120 @@ const SoftwareEngineeringCourse = () => {
         .border-primary { border-color: #73328e !important; }
         a.nav-link:hover { color: #73328e !important; }
       `}</style>
+      <button
+        onClick={scrollToTop}
+        style={{
+          position: "fixed",
+          bottom: "30px",
+          right: "30px",
+          background: "#73328e",
+          color: "#fff",
+          border: "none",
+          borderRadius: "50%",
+          width: "48px",
+          height: "48px",
+          display: "flex",
+          justifyContent: "center",
+          alignItems: "center",
+          fontSize: "20px",
+          boxShadow: "0 4px 12px rgba(0,0,0,0.2)",
+          cursor: "pointer",
+          zIndex: 1000,
+        }}
+      >
+        ↑
+      </button>
+      {/* Bottom-Left Buttons */}
+      <div className="floating-container">
+        {/* Social Buttons */}
+        <div className={`social-buttons ${open ? "open" : ""}`}>
+          <a
+            href="https://www.instagram.com/techcadd_virtual_academy"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="social-btn instagram"
+          >
+            <i className="fa-brands fa-instagram"></i>
+          </a>
+
+          <a
+            href="https://wa.me/919888122254"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="social-btn whatsapp"
+          >
+            <i className="fa-brands fa-whatsapp"></i>
+          </a>
+
+          <a href="tel:+919888122254" className="social-btn call">
+            <i className="fa-solid fa-phone"></i>
+          </a>
+        </div>
+
+        {/* Toggle Button */}
+        <button
+          className={`toggle-btn ${open ? "open" : ""}`}
+          onClick={() => setOpen(!open)}
+        >
+          <span className="line line1"></span>
+          <span className="line line2"></span>
+        </button>
+      </div>
+
+      <style>
+        {`
+  .glow-btn {
+    position: relative;
+    color: #fff;
+    border-radius: 50%;
+    width: 48px;
+    height: 48px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 22px;
+    text-decoration: none;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+    overflow: visible;
+  }
+
+  /* Glow Animation */
+  .glow-btn::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: 50%;
+    background: rgba(128, 0, 128, 0.6);
+    opacity: 0.4;
+    z-index: -1;
+    transform: scale(1);
+    animation: pulseGlow 1.8s infinite ease-in-out;
+  }
+
+  @keyframes pulseGlow {
+    0% { transform: scale(1); opacity: 0.4; }
+    50% { transform: scale(1.4); opacity: 0.1; }
+    100% { transform: scale(1); opacity: 0.4; }
+  }
+`}
+      </style>
 
       <Hero />
       <Section24x7 />
       <Highlights />
+      <Slider />
+      <WhyUsSection />
       <CategorySection />
       <CoursesSection />
       <PlacementCurriculum />
-      <Slider />
-      <WhyUsSection />
       <Outcomes />
+      <EventSection />
       <Gallery />
+      <TeamSection />
       <FooterCTA />
       <Testimonials />
-      {/* <UniqueFeatures /> */}
+      <UniqueFeatures />
       <FAQ />
-      <TeamSection />
       <Brands />
       <Colleges />
     </>
