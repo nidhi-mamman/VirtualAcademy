@@ -10,22 +10,6 @@ const Colleges = () => {
 
     return (
         <div className="py-5">
-            <div className="container text-center mb-4">
-                <h2 id="teamHeading" className="fw-bold display-6 mb-2 text-dark">
-                    Our Partner Colleges
-                </h2>
-                <div
-                    aria-hidden="true"
-                    className="mx-auto"
-                    style={{
-                        width: 120,
-                        height: 12,
-                        background:
-                            "radial-gradient(60px 6px at 60px 6px, rgba(2,6,23,.25), rgba(2,6,23,.12) 60%, rgba(0,0,0,0) 61%)",
-                    }}
-                />
-            </div>
-
             {/* Marquee container */}
             <div className="logo-marquee">
                 <div className="logo-track">

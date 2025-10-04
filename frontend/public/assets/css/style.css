@@ -154,6 +154,7 @@ footer {
     width: 100%;
 }
 
+
 #dot {
     width: 40px;
     height: 40px;
@@ -181,6 +182,7 @@ footer {
     align-items: center;
     justify-content: center;
     flex-direction: column;
+    font-family: var(--ed-body-font);
 }
 
 .tab-content-body {
@@ -314,6 +316,7 @@ footer {
 /*=========
 Font load
 ===========*/
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
 @import url("https://fonts.googleapis.com/css2?family=Urbanist:ital,wght@0,100..900;1,100..900&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Amatic+SC:wght@400;700&family=Fredoka:wght@300..700&display=swap");
@@ -335,18 +338,18 @@ Font load
     --ed-red-color: #dd3924;
     --ed-yellow-color: #fccc42;
     --ed-purple-color: #be94f5;
-    --ed-heading: "Urbanist", sans-serif;
-    --ed-body-font: "Urbanist", sans-serif;
-    --ed-heading-2: "Inter", sans-serif;
-    --ed-heading-3: "Fredoka", sans-serif;
-    --ed-heading-4: "Epilogue", sans-serif;
-    --ed-heading-5: "Figtree", sans-serif;
-    --ed-body-font-2: "Inter", sans-serif;
-    --ed-body-font-3: "Fredoka", sans-serif;
-    --ed-body-font-4: "Epilogue", sans-serif;
-    --ed-body-font-5: "Figtree", sans-serif;
-    --ed-cursive-font: "Golden Hopes PERSONAL USE ONLY Regular";
-    --ed-cursive-font-2: "Amatic SC";
+    --ed-heading: "Poppins", sans-serif;
+    --ed-body-font: "Poppins", sans-serif;
+    --ed-heading-2: "Poppins", sans-serif;
+    --ed-heading-3: "Poppins", sans-serif;
+    --ed-heading-4: "Poppins", sans-serif;
+    --ed-heading-5: "Poppins", sans-serif;
+    --ed-body-font-2: "Poppins", sans-serif;
+    --ed-body-font-3: "Poppins", sans-serif;
+    --ed-body-font-4: "Poppins", sans-serif;
+    --ed-body-font-5: "Poppins", sans-serif;
+    --ed-cursive-font: "Poppins", sans-serif;
+    --ed-cursive-font-2: "Poppins", sans-serif;
     --ed-color-1: rgb(0, 255, 180);
     --ed-color-2: rgb(1, 234, 255);
     --ed-prime-c: #3361ff;
@@ -385,10 +388,13 @@ Font load
     --th-border-color2: #E6E6E6;
     --brand-color: #79F4E4;
     --light-blue-color: #001C49;
-    --title-font: "Plus Jakarta Sans", sans-serif;
-    --body-font: "Inter", sans-serif;
-    --style-font: "Nunito", sans-serif;
+    --title-font: "Poppins", sans-serif;
+    --body-font: "Poppins", sans-serif;
+    --style-font: "Poppins", sans-serif;
     --icon-font: "Font Awesome 6 Pro";
+    /* ensure other named font vars fall back to Poppins so all sections use it */
+    --playfair: "Poppins", sans-serif;
+    --ag-body-font: "Poppins", sans-serif;
     --main-container: 1320px;
     --container-gutters: 24px;
     --section-space: 120px;
@@ -5072,45 +5078,6 @@ only screen and (min-width: 768px) and (max-width: 991px) {
     border-radius: 6px;
     transition: all 0.5s ease-in-out
 }
-
-
-.card-transform-1 .outcomes-card,
-.card-transform-3 .outcomes-card {
-    transition: all 0.4s ease-in-out;
-    animation: moveup 0.7s infinite linear alternate-reverse;
-}
-
-@keyframes moveup {
-    0% {
-        transform: translateY(0px);
-    }
-
-    100% {
-        transform: translateY(20px)
-    }
-}
-
-
-.card-transform-0 .outcomes-card,
-.card-transform-2 .outcomes-card {
-    transition: all 0.4s ease-in-out;
-
-
-    animation: movedown 0.7s infinite linear alternate-reverse;
-}
-
-@keyframes movedown {
-    0% {
-        transform: translateY(0px);
-    }
-
-    100% {
-        transform: translateY(-20px)
-    }
-}
-
-
-
 
 @-webkit-keyframes toLeftFromRight {
     49% {
@@ -27976,20 +27943,19 @@ only screen and (min-width: 576px) and (max-width: 767px),
     border-radius: 30px;
     overflow: hidden;
     transition: all 0.3s ease-in-out;
+    margin-block: 20px;
+    width: 100%;
     box-shadow: 2px 2px 8px purple, -2px -2px 8px purple;
 }
 
 .team-section {
     position: relative;
-    background-color: #DFDBE5;
-    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 304 304' width='304' height='304'%3E%3Cpath fill='%239C92AC' fill-opacity='0.4' d='M44.1 224a5 5 0 1 1 0 2H0v-2h44.1zm160 48a5 5 0 1 1 0 2H82v-2h122.1zm57.8-46a5 5 0 1 1 0-2H304v2h-42.1zm0 16a5 5 0 1 1 0-2H304v2h-42.1zm6.2-114a5 5 0 1 1 0 2h-86.2a5 5 0 1 1 0-2h86.2zm-256-48a5 5 0 1 1 0 2H0v-2h12.1zm185.8 34a5 5 0 1 1 0-2h86.2a5 5 0 1 1 0 2h-86.2zM258 12.1a5 5 0 1 1-2 0V0h2v12.1zm-64 208a5 5 0 1 1-2 0v-54.2a5 5 0 1 1 2 0v54.2zm48-198.2V80h62v2h-64V21.9a5 5 0 1 1 2 0zm16 16V64h46v2h-48V37.9a5 5 0 1 1 2 0zm-128 96V208h16v12.1a5 5 0 1 1-2 0V210h-16v-76.1a5 5 0 1 1 2 0zm-5.9-21.9a5 5 0 1 1 0 2H114v48H85.9a5 5 0 1 1 0-2H112v-48h12.1zm-6.2 130a5 5 0 1 1 0-2H176v-74.1a5 5 0 1 1 2 0V242h-60.1zm-16-64a5 5 0 1 1 0-2H114v48h10.1a5 5 0 1 1 0 2H112v-48h-10.1zM66 284.1a5 5 0 1 1-2 0V274H50v30h-2v-32h18v12.1zM236.1 176a5 5 0 1 1 0 2H226v94h48v32h-2v-30h-48v-98h12.1zm25.8-30a5 5 0 1 1 0-2H274v44.1a5 5 0 1 1-2 0V146h-10.1zm-64 96a5 5 0 1 1 0-2H208v-80h16v-14h-42.1a5 5 0 1 1 0-2H226v18h-16v80h-12.1zm86.2-210a5 5 0 1 1 0 2H272V0h2v32h10.1zM98 101.9V146H53.9a5 5 0 1 1 0-2H96v-42.1a5 5 0 1 1 2 0zM53.9 34a5 5 0 1 1 0-2H80V0h2v34H53.9zm60.1 3.9V66H82v64H69.9a5 5 0 1 1 0-2H80V64h32V37.9a5 5 0 1 1 2 0zM101.9 82a5 5 0 1 1 0-2H128V37.9a5 5 0 1 1 2 0V82h-28.1zm16-64a5 5 0 1 1 0-2H146v44.1a5 5 0 1 1-2 0V18h-26.1zm102.2 270a5 5 0 1 1 0 2H98v14h-2v-16h124.1zM242 149.9V160h16v34h-16v62h48v48h-2v-46h-48v-66h16v-30h-16v-12.1a5 5 0 1 1 2 0zM53.9 18a5 5 0 1 1 0-2H64V2H48V0h18v18H53.9zm112 32a5 5 0 1 1 0-2H192V0h50v2h-48v48h-28.1zm-48-48a5 5 0 0 1-9.8-2h2.07a3 3 0 1 0 5.66 0H178v34h-18V21.9a5 5 0 1 1 2 0V32h14V2h-58.1zm0 96a5 5 0 1 1 0-2H137l32-32h39V21.9a5 5 0 1 1 2 0V66h-40.17l-32 32H117.9zm28.1 90.1a5 5 0 1 1-2 0v-76.51L175.59 80H224V21.9a5 5 0 1 1 2 0V82h-49.59L146 112.41v75.69zm16 32a5 5 0 1 1-2 0v-99.51L184.59 96H300.1a5 5 0 0 1 3.9-3.9v2.07a3 3 0 0 0 0 5.66v2.07a5 5 0 0 1-3.9-3.9H185.41L162 121.41v98.69zm-144-64a5 5 0 1 1-2 0v-3.51l48-48V48h32V0h2v50H66v55.41l-48 48v2.69zM50 53.9v43.51l-48 48V208h26.1a5 5 0 1 1 0 2H0v-65.41l48-48V53.9a5 5 0 1 1 2 0zm-16 16V89.41l-34 34v-2.82l32-32V69.9a5 5 0 1 1 2 0zM12.1 32a5 5 0 1 1 0 2H9.41L0 43.41V40.6L8.59 32h3.51zm265.8 18a5 5 0 1 1 0-2h18.69l7.41-7.41v2.82L297.41 50H277.9zm-16 160a5 5 0 1 1 0-2H288v-71.41l16-16v2.82l-14 14V210h-28.1zm-208 32a5 5 0 1 1 0-2H64v-22.59L40.59 194H21.9a5 5 0 1 1 0-2H41.41L66 216.59V242H53.9zm150.2 14a5 5 0 1 1 0 2H96v-56.6L56.6 162H37.9a5 5 0 1 1 0-2h19.5L98 200.6V256h106.1zm-150.2 2a5 5 0 1 1 0-2H80v-46.59L48.59 178H21.9a5 5 0 1 1 0-2H49.41L82 208.59V258H53.9zM34 39.8v1.61L9.41 66H0v-2h8.59L32 40.59V0h2v39.8zM2 300.1a5 5 0 0 1 3.9 3.9H3.83A3 3 0 0 0 0 302.17V256h18v48h-2v-46H2v42.1zM34 241v63h-2v-62H0v-2h34v1zM17 18H0v-2h16V0h2v18h-1zm273-2h14v2h-16V0h2v16zm-32 273v15h-2v-14h-14v14h-2v-16h18v1zM0 92.1A5.02 5.02 0 0 1 6 97a5 5 0 0 1-6 4.9v-2.07a3 3 0 1 0 0-5.66V92.1zM80 272h2v32h-2v-32zm37.9 32h-2.07a3 3 0 0 0-5.66 0h-2.07a5 5 0 0 1 9.8 0zM5.9 0A5.02 5.02 0 0 1 0 5.9V3.83A3 3 0 0 0 3.83 0H5.9zm294.2 0h2.07A3 3 0 0 0 304 3.83V5.9a5 5 0 0 1-3.9-5.9zm3.9 300.1v2.07a3 3 0 0 0-1.83 1.83h-2.07a5 5 0 0 1 3.9-3.9zM97 100a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm0-16a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm16 16a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm16 16a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm0 16a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm-48 32a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm16 16a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm32 48a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm-16 16a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm32-16a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm0-32a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm16 32a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm32 16a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm0-16a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm-16-64a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm16 0a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm16 96a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm0 16a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm16 16a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm16-144a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm0 32a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm16-32a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm16-16a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm-96 0a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm0 16a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm16-32a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm96 0a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm-16-64a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm16-16a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm-32 0a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm0-16a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm-16 0a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm-16 0a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm-16 0a3 3 0 1 0 0-6 3 3 0 0 0 0 6zM49 36a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm-32 0a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm32 16a3 3 0 1 0 0-6 3 3 0 0 0 0 6zM33 68a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm16-48a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm0 240a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm16 32a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm-16-64a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm0 16a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm-16-32a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm80-176a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm16 0a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm-16-16a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm32 48a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm16-16a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm0-32a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm112 176a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm-16 16a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm0 16a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm0 16a3 3 0 1 0 0-6 3 3 0 0 0 0 6zM17 180a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm0 16a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm0-32a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm16 0a3 3 0 1 0 0-6 3 3 0 0 0 0 6zM17 84a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm32 64a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm16-16a3 3 0 1 0 0-6 3 3 0 0 0 0 6z'%3E%3C/path%3E%3C/svg%3E");
 }
 
 .team-section::before {
     content: "";
     position: absolute;
     inset: 0;
-    background-color: rgba(223, 219, 229, 0.8);
     pointer-events: none;
 }
 
@@ -28007,7 +27973,7 @@ only screen and (min-width: 576px) and (max-width: 767px),
 }
 
 .category-area .swiper .swiper-slide {
-    width: 312px
+    width: 312px;
 }
 
 .category-card {
@@ -28202,7 +28168,7 @@ only screen and (min-width: 576px) and (max-width: 767px),
 }
 
 .categorySlider6 .swiper-pagination-progressbar .swiper-pagination-progressbar-fill {
-    background: var(--title-color)
+    background: purple
 }
 
 .categorySlider6 .slider-pagination .swiper-pagination-bullets .swiper-pagination-bullet {
@@ -30282,7 +30248,7 @@ only screen and (min-width: 576px) and (max-width: 767px),
 
 .testi-card_avater img {
     width: 80px;
-    height:80px;
+    height: 80px;
     border-radius: 50%;
     -o-object-fit: cover;
     object-fit: cover
@@ -30846,7 +30812,7 @@ only screen and (min-width: 576px) and (max-width: 767px),
 }
 
 .testi-box .box-title {
-    font-size:20px;
+    font-size: 20px;
     font-weight: 600;
     margin-bottom: 0px
 }
@@ -32290,7 +32256,560 @@ only screen and (min-width: 576px) and (max-width: 767px),
     }
 }
 
-.media-body .box-title,.media-body .testi-card_desig{
-    font-size:15px!important;
+.media-body .box-title,
+.media-body .testi-card_desig {
+    font-size: 15px !important;
 }
 
+.category-card.style4 {
+    height: 476px
+}
+
+@media(max-width: 375px) {
+    .category-card.style4 {
+        height: 100%
+    }
+}
+
+.category-card.style4 .box-img {
+    height: 416px;
+    -webkit-transition: all .6s ease;
+    transition: all .6s ease;
+    margin-bottom: 30px
+}
+
+@media(max-width: 375px) {
+    .category-card.style4 .box-img {
+        height: 100%
+    }
+}
+
+.category-card.style4 .box-img img {
+    width: 100%;
+    height: 100%;
+    -o-object-fit: cover;
+    object-fit: cover
+}
+
+.category-card.style4 .box-content {
+    margin-bottom: 30px
+}
+
+.category-card.style4 .box-wrapp {
+    -webkit-transition: all .6s ease;
+    transition: all .6s ease;
+    opacity: 1;
+    overflow: hidden
+}
+
+.category-card.style4 .box-wrapp .icon-btn {
+    display: block
+}
+
+.category-card.style4 .box-title {
+    margin-bottom: 7px
+}
+
+.category-card.style4:hover .box-img {
+    height: 312px
+}
+
+.category-card .box-img {
+    border-radius: 24px;
+    margin-bottom: 22px
+}
+
+.category-card .box-img img {
+    border-radius: 24px;
+    -webkit-transition: 1.3s all ease;
+    transition: 1.3s all ease
+}
+
+.category-card .box-title {
+    margin-bottom: 0
+}
+
+.category-card .line-btn {
+    text-transform: capitalize;
+    color: var(--body-color)
+}
+
+.category-card .line-btn:before {
+    display: none
+}
+
+.category-card:hover .box-img img {
+    -webkit-transform: scale(1.3);
+    transform: scale(1.3)
+}
+
+.category-area2 {
+    position: relative;
+    z-index: 1
+}
+
+
+.category-card.style4 .box-wrapp {
+    -webkit-transition: all .6s ease;
+    transition: all .6s ease;
+    opacity: 1;
+    overflow: hidden
+}
+
+.category-card.style4 .box-wrapp .icon-btn {
+    display: block
+}
+
+.th-swiper-custom {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 30px;
+    position: relative;
+    padding: 0 20px;
+    max-width: 1000px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.slider-arrow {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: purple;
+    border: 1px solid #e0e0e0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    flex-shrink: 0;
+}
+
+.slider-arrow:hover {
+    border-color: #333;
+}
+
+.slider-arrow.swiper-button-disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+    pointer-events: none;
+}
+
+.slider-arrow img {
+    width: 20px;
+    height: 20px;
+    display: block;
+}
+
+.slider-pagination {
+    flex-grow: 1;
+    height: 2px;
+    background-color: #e0e0e0;
+    margin: 0 20px;
+    position: relative;
+    overflow: hidden;
+}
+
+.slider-pagination .swiper-pagination-progressbar-fill {
+    height: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+
+
+.swiper-pagination-progressbar .swiper-pagination-progressbar-fill {
+    background: linear-gradient(120deg, rgb(115, 50, 142) 0%, rgb(90, 39, 111) 100%) !important;
+}
+
+.th-swiper-custom .slider-pagination {
+    position: relative !important;
+    flex-grow: 1;
+    margin: 0 20px;
+    height: 2px;
+}
+
+.th-swiper-custom .slider-arrow {
+    position: static !important;
+    left: auto !important;
+    right: auto !important;
+    top: auto !important;
+    transform: none !important;
+    flex-shrink: 0 !important;
+    margin: 0 !important;
+}
+
+.th-swiper-custom .slider-prev {
+    margin-right: 20px !important;
+}
+
+.th-swiper-custom .slider-next {
+    margin-left: 20px !important;
+}
+
+.box-wrapp .box-content .box-text,
+.box-wrapp .box-content .box-title {
+    font-size: 16px;
+}
+
+
+.benefit-area {
+    position: relative;
+    z-index: 2
+}
+
+@media(max-width: 1199px) {
+    .benefit-area {
+        padding-bottom: 300px
+    }
+}
+
+@media(max-width: 850px) {
+    .benefit-area {
+        padding-bottom: 450px
+    }
+}
+
+@media(max-width: 767px) {
+    .benefit-area {
+        padding-bottom: 350px;
+        background-color: var(--title-color);
+        background-image: none !important
+    }
+}
+
+@media(max-width: 480px) {
+    .benefit-area {
+        padding-bottom: 450px
+    }
+}
+
+@media(max-width: 375px) {
+    .benefit-area {
+        padding-bottom: 100px
+    }
+}
+
+.benefit-area .th-benefit-bg {
+    position: absolute;
+    inset: 0
+}
+
+.benefit-titlebox .sec-title {
+    font-size: 30px
+}
+
+.benefitSlide .benefit-img {
+    position: relative;
+    overflow: hidden;
+    max-width: 1508px
+}
+
+@media(min-width: 1930px) {
+    .benefitSlide .benefit-img {
+        max-width: 70%
+    }
+}
+
+@media(max-width: 1199px) {
+    .benefitSlide .benefit-img {
+        max-width: 100%;
+        height: 100%
+    }
+}
+
+.benefitSlide .benefit-img img {
+    position: relative;
+    overflow: hidden
+}
+
+.benefitSlide .benefit-img::before {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    content: "";
+    background: rgba(11, 20, 34, .6);
+    -webkit-transform: rotate(-180deg);
+    transform: rotate(-180deg);
+    z-index: 2
+}
+
+.benefitSlide .icon-box {
+    position: absolute;
+    left: 50%;
+    bottom: 74px
+}
+
+.benefitSlide .slider-arrow {
+    -webkit-box-shadow: none;
+    box-shadow: none;
+    border: 1px solid #fff;
+    --icon-size: 66px;
+    background-color: rgba(0, 0, 0, 0)
+}
+
+.benefitSlide .slider-arrow img {
+    -webkit-filter: brightness(0) invert(1);
+    filter: brightness(0) invert(1)
+}
+
+.benefitSlide .slider-arrow:hover {
+    background-color: var(--white-color)
+}
+
+.benefitSlide .slider-arrow:hover img {
+    -webkit-filter: none;
+    filter: none
+}
+
+.benefitSlide .swiper-slide {
+    position: relative;
+    overflow: hidden;
+    -webkit-transition: opacity .6s ease, -webkit-transform .6s ease;
+    transition: opacity .6s ease, -webkit-transform .6s ease;
+    transition: transform .6s ease, opacity .6s ease;
+    transition: transform .6s ease, opacity .6s ease, -webkit-transform .6s ease
+}
+
+.benefitSlide .swiper-slide.swiper-slide-active .destination-img img {
+    -webkit-transform: scale(1.1);
+    transform: scale(1.1);
+    -webkit-transition: -webkit-transform .6s ease-in-out;
+    transition: -webkit-transform .6s ease-in-out;
+    transition: transform .6s ease-in-out;
+    transition: transform .6s ease-in-out, -webkit-transform .6s ease-in-out
+}
+
+.benefitSlide .swiper-slide .destination-img img {
+    -webkit-transform: scale(1);
+    transform: scale(1);
+    -webkit-transition: -webkit-transform .6s ease-in-out;
+    transition: -webkit-transform .6s ease-in-out;
+    transition: transform .6s ease-in-out;
+    transition: transform .6s ease-in-out, -webkit-transform .6s ease-in-out
+}
+
+.benefit-area {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 100%
+}
+
+@media(max-width: 1199px) {
+    .benefit-area {
+        margin-top: 40px
+    }
+}
+
+@media(max-width: 375px) {
+    .benefit-area {
+        position: relative
+    }
+}
+
+.benefit-slider-thumb-wrap {
+    margin-right: -35% !important;
+    margin-top: 150px !important;
+}
+
+@media(max-width: 767px) {
+    .benefit-slider-thumb-wrap {
+        margin: 0 !important
+    }
+}
+
+.benefit-slider-thumb-wrap .box-img {
+    height: 433px;
+    border-radius: 20px
+}
+
+@media(max-width: 767px) {
+    .benefit-slider-thumb-wrap .box-img {
+        height: 200px
+    }
+}
+
+
+.benefit-slider-thumb-wrap .swiper {
+    padding-left: 20px !important;
+    /* Or 20px to match your spaceBetween */
+    box-sizing: border-box;
+}
+
+.benefit-slider-thumb-wrap .swiper-slide {
+    height: auto;
+}
+
+
+.benefit-slider-thumb-wrap .box-img img {
+    width: 100%;
+    height: 100%;
+    -o-object-fit: cover;
+    object-fit: cover;
+    border-radius: 20px;
+    border: 1px solid var(--th-border-color)
+}
+
+/* BenefitSection.css */
+
+.benefit-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    border-radius: 12px;
+}
+
+.box-img {
+    border-radius: 12px;
+    overflow: hidden;
+    height: 250px;
+    position: relative;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.box-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.box-img:hover img {
+    transform: scale(1.05);
+}
+
+/* Spacing between slides is already handled via Swiper's spaceBetween prop */
+.slider-area .swiper {
+    padding: 10px 0;
+}
+
+/* Navigation arrows positioning */
+.icon-box {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    right: 0;
+    z-index: 10;
+    display: flex;
+    justify-content: space-between;
+    transform: translateY(-50%);
+    padding: 0 20px;
+}
+
+.slider-arrow.default {
+    background: rgba(255, 255, 255, 0.9);
+    border: none;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    padding: 8px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.slider-arrow.default img {
+    width: 16px;
+    height: 16px;
+}
+
+.benefit-area .sub-title {
+    margin-top: 100px !important;
+}
+
+.benefit-area .title-area {
+    margin-bottom: 0px !important;
+}
+
+/* Mobile-specific fixes for Benefit swiper when only thumbnails are shown */
+@media (max-width: 767px) {
+    .benefit-area {
+        position: relative !important;
+        top: auto !important;
+        right: auto !important;
+        width: 100% !important;
+        padding: 8px 0;
+        margin-top: 0;
+    }
+
+    /* Mobile gradient background as requested */
+    .benefit-area,
+    .benefit-area .th-benefit-bg,
+    .bg-smoke {
+        background-color: transparent !important;
+        background-image: linear-gradient(120deg, rgb(115, 50, 142) 0%, rgb(90, 39, 111) 100%) !important;
+        background: linear-gradient(120deg, rgb(115, 50, 142) 0%, rgb(90, 39, 111) 100%) !important;
+    }
+
+    .benefit-slider-thumb-wrap {
+        margin-right: 0 !important;
+        padding: 0 12px;
+    }
+
+    .benefit-slider-thumb-wrap .swiper {
+        padding-left: 0 !important;
+    }
+
+    .benefit-grid-thumb {
+        margin-bottom: 50px !important;
+    }
+
+    .benefit-area .sub-title {
+        text-align: center;
+        margin-top: 50px !important;
+    }
+
+    .benefit-area .sec-title {
+        text-align: center;
+    }
+
+    /* Make thumbnails taller (portrait) and limit their width so they aren't broad */
+    .benefit-slider-thumb-wrap .box-img,
+    .box-img {
+        height: 360px !important;
+        /* taller, change as desired */
+        max-width: 92% !important;
+        /* prevent very wide slides */
+        margin: 0 auto !important;
+        /* center single slide */
+        border-radius: 12px;
+    }
+
+    .benefit-slider-thumb-wrap .swiper-slide {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .benefit-slider-thumb-wrap .box-img img,
+    .box-img img {
+        width: auto !important;
+        height: 100% !important;
+        object-fit: cover !important;
+        display: block;
+    }
+
+    /* Hide the large main slider on mobile if it's still in DOM */
+    .benefitSlide {
+        display: none !important;
+    }
+}
+
+html,
+body {
+    font-family: var(--body-font);
+}
+
+input,
+button,
+select,
+textarea {
+    font-family: var(--body-font);
+}

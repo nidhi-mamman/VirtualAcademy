@@ -108,7 +108,7 @@ const Contactus = () => {
           @keyframes moveEllipse2 { 0%{ transform: translateX(0); } 100%{ transform: translateX(-18px); } }
           @keyframes moveCircle1 { 0%{ transform: scale(1); } 100%{ transform: scale(1.12); } }
         `}</style>
-        <div className="container text-center" style={{ position: 'relative', zIndex: 1,paddingTop:"200px",paddingBottom:"50px" }}>
+        <div className="container text-center" style={{ position: 'relative', zIndex: 1,paddingBlock:"40px" }}>
           <h1 className="display-4 fw-bold text-white mb-3">Get in Touch Today!</h1>
           <nav aria-label="breadcrumb">
             <ol className="breadcrumb justify-content-center">

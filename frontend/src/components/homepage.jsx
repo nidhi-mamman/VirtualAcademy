@@ -2,13 +2,14 @@
 
 import React, { useEffect } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Autoplay } from "swiper/modules";
+import { Autoplay, Navigation, Pagination } from "swiper/modules";
 
 
 // Import Swiper styles
 import "swiper/css";
 import "swiper/css/effect-coverflow";
-import "swiper/css/navigation"; // only if you use navigation arrows
+import "swiper/css/navigation";
+import "swiper/css/pagination";
 
 import '../category-fix.css';
 import { useState } from "react";
@@ -28,7 +29,6 @@ import whyus from '../images/whyus.jpeg'
 import Brands from './brands'
 import Slider from "./slider";
 import Colleges from "./Colleges";
-import CaseSwiper from "./CaseSwiper";
 
 // Import testimonial images
 import testi1 from "../images/testi1.png";
@@ -39,6 +39,7 @@ import testi5 from '../images/testi5.png'
 import testi6 from '../images/testi6.png'
 import testi7 from '../images/testi7.png'
 import quoteIcon from "../images/testi-quote.svg";
+import BenefitSection from "./BenefitSwiper";
 
 const SoftwareEngineeringCourse = () => {
 
@@ -475,7 +476,7 @@ const SoftwareEngineeringCourse = () => {
         <div className="position-absolute top-0 start-0 w-100 h-100 noise-overlay" style={{ zIndex: 0, pointerEvents: "none" }} />
         <div ref={cursorRef} className="cursor-spot position-absolute" style={{ zIndex: 0 }} aria-hidden="true" />
 
-        <div className="container position-relative" style={{ zIndex: 1, paddingBlock:"40px"}}>
+        <div className="container position-relative" style={{ zIndex: 1, paddingBlock: "40px" }}>
           <div className="row align-items-center g-5">
             <div className="col-lg-7 hero-fadein">
               {/* left content unchanged */}
@@ -669,6 +670,7 @@ const SoftwareEngineeringCourse = () => {
   };
 
   /** ---------------- HIGHLIGHTS ---------------- **/
+ 
   const Highlights = () => {
 
     const slidesData = [
@@ -757,28 +759,224 @@ const SoftwareEngineeringCourse = () => {
         </div>
       </section>
     )
-  }
-
-  //------------------CATEGORY SECTION---------------------//
-
-
-  const CategorySection = () => (
-    <div className="case-area position-relative overflow-hidden space">
-      <div className="container">
-        <div className="row justify-content-center">
-          <div className="col-xl-12">
-            <div className="title-area case-title-box text-center text-xl-center"><span
-              className="sub-title text-anime-style-2">Our Popular Categories</span>
-              <h2 className="sec-title text-anime-style-3 fs-1 fw-bolder">Virtual Academy-Career-Ready IT Courses</h2>
-              <p style={{ fontSize: "18px", width: "100%" }}>Explore our industry-focused IT courses designed to equip you with practical skills, certifications, and hands-on experience for a successful tech career.</p>
+    return (
+      <div
+        className="service-area bg-top-center position-relative space overflow-hidden"
+        id="service-sec"
+      >
+        <div className="container">
+          <div className="row justify-content-center">
+            <div className="col-xl-8">
+              <div className="title-area text-center">
+                <span className="sub-title text-anime-style-2">
+                  Services We’re Offering
+                </span>
+                <h2 className="sec-title text-anime-style-3">
+                  We Provide our Clients Best Cloud Computing Solution
+                </h2>
+              </div>
             </div>
           </div>
-          <div className="col-xl-12">
-            <CaseSwiper />
+
+          <div className="row">
+            <div className="service-list-area">
+              {/* Service 1 */}
+              <div className="service-list-wrap sv-list2">
+                <div className="service-list service-bg1">
+                  <span className="service-icon">
+                    <img src="assets/img/icon/service-2-1.svg" alt="Cloud Security" />
+                  </span>
+                  <div className="service-content">
+                    <h4 className="box-title">
+                      <a href="service-details.html">Cloud Security</a>
+                    </h4>
+                    <span className="service-subtitle">
+                      Secure authentication and role-based access controls.
+                    </span>
+                  </div>
+                  <a href="service-details.html" className="th-btn style2">
+                    View Details <i className="fa-light fa-arrow-right-long"></i>
+                  </a>
+                </div>
+              </div>
+
+              {/* Service 2 */}
+              <div className="service-list-wrap sv-list2">
+                <div className="service-list service-bg2">
+                  <span className="service-icon">
+                    <img src="assets/img/icon/service-2-2.svg" alt="Data Recovery" />
+                  </span>
+                  <div className="service-content">
+                    <h4 className="box-title">
+                      <a href="service-details.html">Data Recovery</a>
+                    </h4>
+                    <span className="service-subtitle">
+                      Salvage critical data efficiently with our reliable recovery solutions
+                    </span>
+                  </div>
+                  <a href="service-details.html" className="th-btn style2">
+                    View Details <i className="fa-light fa-arrow-right-long"></i>
+                  </a>
+                </div>
+              </div>
+
+              {/* Service 3 */}
+              <div className="service-list-wrap sv-list2">
+                <div className="service-list service-bg3">
+                  <span className="service-icon">
+                    <img src="assets/img/icon/service-2-3.svg" alt="System Integration" />
+                  </span>
+                  <div className="service-content">
+                    <h4 className="box-title">
+                      <a href="service-details.html">System Integration</a>
+                    </h4>
+                    <span className="service-subtitle">
+                      Seamlessly meld disparate systems for unified operations
+                    </span>
+                  </div>
+                  <a href="service-details.html" className="th-btn style2">
+                    View Details <i className="fa-light fa-arrow-right-long"></i>
+                  </a>
+                </div>
+              </div>
+
+              {/* Service 4 */}
+              <div className="service-list-wrap sv-list2 active">
+                <div className="service-list service-bg4">
+                  <span className="service-icon">
+                    <img src="assets/img/icon/service-2-4.svg" alt="Hosting Solution" />
+                  </span>
+                  <div className="service-content">
+                    <h4 className="box-title">
+                      <a href="service-details.html">Hosting Solution</a>
+                    </h4>
+                    <span className="service-subtitle">
+                      Experience uptime and performance with our premier hosting
+                    </span>
+                  </div>
+                  <a href="service-details.html" className="th-btn style2">
+                    View Details <i className="fa-light fa-arrow-right-long"></i>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* View All Services Button */}
+          <div className="service-btn text-center mt-60">
+            <a href="service.html" className="th-btn th-icon">
+              View All Services <i className="fa-light fa-arrow-right-long"></i>
+            </a>
           </div>
         </div>
       </div>
-    </div>
+    )
+  }
+
+
+  //------------------CATEGORY SECTION---------------------//
+  const caseData = [
+    { img: "assets/img/case/webdev.png", title: "Web & Mobile Development", subtitle: "Tailored website solutions designed to meet specific business requirements." },
+    { img: "assets/img/case/ui-ux.png", title: "Ui/Ux Design", subtitle: "Design intuitive and visually appealing interfaces for websites and apps." },
+    { img: "assets/img/case/cybert.jpg", title: "Cyber Security", subtitle: "Defending digital frontiers with precision, awareness, and cutting-edge technology." },
+    { img: "assets/img/case/backend.png", title: "Backend Devlopment", subtitle: "Building secure, scalable, and efficient server-side solutions that power seamless applications." },
+    { img: "assets/img/case/appdev.png", title: "Apps Development", subtitle: "Native app development for IOS and Android platforms." },
+    { img: "assets/img/case/da.jpg", title: "Data Analytics", subtitle: "Transforming raw data into actionable insights that drive smarter business decisions." },
+    { img: "assets/img/case/ds.jpg", title: "Data Science", subtitle: "Leveraging machine learning and analytics to uncover patterns and drive smarter decisions." },
+
+  ];
+
+
+  const CategorySection = () => (
+    <section className="service-area5 bg-top-center position-relative overflow-hidden space">
+      <div className="container th-container">
+        <div className="row justify-content-center">
+          <div className="col-lg-6">
+           <div className="text-center mb-2">
+            <div className="text-center mb-4" data-aos="fade-up">
+              <h2 id="teamHeading" className="fw-bold display-6 mb-2 text-dark">Popular Categories</h2>
+              <div aria-hidden="true" className="mx-auto" style={{ width: 120, height: 12, background: "radial-gradient(60px 6px at 60px 6px, rgba(2,6,23,.25), rgba(2,6,23,.12) 60%, rgba(0,0,0,0) 61%)" }} />
+            </div>
+            <p className="text-muted" data-aos="fade-up">
+              Explore the best sorted just for you.
+            </p>
+          </div>
+          </div>
+        </div>
+      </div>
+      <div className="container-fluid p-0">
+        <Swiper
+          modules={[Navigation, Pagination, Autoplay]}
+          loop={true}
+          spaceBetween={50}
+          autoplay={{
+            delay: 2000,
+            disableOnInteraction: false,
+          }}
+          speed={800}
+          breakpoints={{
+            0: { slidesPerView: 1 },
+            768: { slidesPerView: 3 },
+            992: { slidesPerView: 3 },
+            1200: { slidesPerView: 3.8 },
+          }}
+          className="th-slider categorySlider6"
+          id="catSlider6"
+          pagination={{
+            el: ".slider-pagination",
+            type: "progressbar",
+            clickable: true,
+          }}
+          navigation={{
+            prevEl: ".slider-prev",
+            nextEl: ".slider-next",
+          }}
+          onBeforeInit={(swiper) => {
+            swiper.params.navigation.prevEl = ".slider-prev";
+            swiper.params.navigation.nextEl = ".slider-next";
+            swiper.params.pagination.el = ".slider-pagination";
+          }}
+        >
+          {caseData.map((item, index) => (
+            <SwiperSlide key={index}>
+              <div className="category-card style4">
+                <div className="box-img global-img">
+                  <img src={item.img} alt={item.title} />
+                </div>
+                <div className="box-wrapp">
+                  <div className="box-content mt-4 text-center">
+                    <h3 className="box-title ">
+                      <a href="service.html">{item.title}</a>
+                    </h3>
+                    <p className="box-text text-center w-100">{item.subtitle}</p>
+                  </div>
+                  <div className="icon-btn">
+                    <i className="fa-solid fa-arrow-up-right"></i>
+                  </div>
+                </div>
+              </div>
+            </SwiperSlide>
+          ))}
+        </Swiper>
+
+        {/* Custom Navigation */}
+        <div className="th-swiper-custom">
+          <div>
+            <button className="slider-arrow slider-prev">
+              <i class="fa-solid fa-arrow-left" style={{ color: "#ffffff" }}></i>
+            </button>
+          </div>
+
+
+          <div className="slider-pagination"></div>
+          <div>
+            <button className="slider-arrow slider-next">
+              <i class="fa-solid fa-arrow-right-long" style={{ color: "#ffffff" }}></i>
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
 
   )
 
@@ -1513,9 +1711,14 @@ const SoftwareEngineeringCourse = () => {
     return (
       <section className="testi-area overflow-hidden space py-5" id="testi-sec">
         <div className="container-fluid p-0">
-          <div className="title-area mb-20 text-center">
-            <span className="sub-title text-anime-style-2 fs-1">Testimonial</span>
-            <h2 className="sec-title text-anime-style-3">What Client Say About us</h2>
+           <div className="text-center mb-2">
+            <div className="text-center mb-4" data-aos="fade-up">
+              <h2 id="teamHeading" className="fw-bold display-6 mb-2 text-dark">Testimonials</h2>
+              <div aria-hidden="true" className="mx-auto" style={{ width: 120, height: 12, background: "radial-gradient(60px 6px at 60px 6px, rgba(2,6,23,.25), rgba(2,6,23,.12) 60%, rgba(0,0,0,0) 61%)" }} />
+            </div>
+            <p className="text-muted" data-aos="fade-up">
+            What students are saying about us
+            </p>
           </div>
 
           <div className="slider-area">
@@ -1893,8 +2096,8 @@ const SoftwareEngineeringCourse = () => {
       <section className="py-5 team-section" aria-labelledby="teamHeading">
         <div className="container">
           <div className="text-center mb-4">
-            <h2 id="teamHeading" className="fw-bold display-6 mb-2 text-dark">Our Management Team</h2>
-            <div aria-hidden="true" className="mx-auto" style={{ width: 120, height: 12, background: "radial-gradient(60px 6px at 60px 6px, rgba(2,6,23,.25), rgba(2,6,23,.12) 60%, rgba(0,0,0,0) 61%)" }} />
+            <h2 id="teamHeading" className="fw-bold display-6 mb-2 text-dark">Meet Our Expert Team</h2>
+            <p>Our team of experienced professionals is dedicated to delivering the best IT solutions, guiding you through every step of your digital journey.</p>
           </div>
           <div className="teamvtc-section">
             <img src={team} alt="" className="img-fluid" />
@@ -1974,77 +2177,6 @@ const SoftwareEngineeringCourse = () => {
 
   )
 
-  const Gallery = () => (
-    <div class="gallery-area overflow-hidden">
-      <div class="container th-container">
-        <div className="text-center mb-4">
-          <h2 id="teamHeading" className="fw-bold display-6 mb-2 text-dark">Our Gallery</h2>
-          <div aria-hidden="true" className="mx-auto" style={{ width: 120, height: 12, background: "radial-gradient(60px 6px at 60px 6px, rgba(2,6,23,.25), rgba(2,6,23,.12) 60%, rgba(0,0,0,0) 61%)" }} />
-        </div>
-        <div class="row gy-10 gx-10 justify-content-center align-items-center">
-          <div class="col-md-6 col-lg-2">
-            <div class="gallery-card">
-              <div class="box-img global-img"><a href="assets/img/gallery/gallery_1_1.jpg"
-                class="popup-image">
-                <div class="icon-btn"><i class="fa fa-magnifying-glass-plus"></i></div><img
-                  src="assets/img/gallery/gallery_1_1.jpg" alt="gallery image" />
-              </a></div>
-            </div>
-          </div>
-          <div class="col-md-6 col-lg-2">
-            <div class="gallery-card">
-              <div class="box-img global-img"><a href="assets/img/gallery/gallery_1_2.jpg"
-                class="popup-image">
-                <div class="icon-btn"><i class="fa fa-magnifying-glass-plus"></i></div><img
-                  src="assets/img/gallery/gallery_1_2.jpg" alt="gallery image" />
-              </a></div>
-            </div>
-            <div class="gallery-card">
-              <div class="box-img global-img"><a href="assets/img/gallery/gallery_1_3.jpg"
-                class="popup-image">
-                <div class="icon-btn"><i class="fa fa-magnifying-glass-plus"></i></div><img
-                  src="assets/img/gallery/gallery_1_3.jpg" alt="gallery image" />
-              </a></div>
-            </div>
-          </div>
-          <div class="col-md-6 col-lg-2">
-            <div class="gallery-card">
-              <div class="box-img global-img"><a href="assets/img/gallery/gallery_1_4.jpg"
-                class="popup-image">
-                <div class="icon-btn"><i class="fa fa-magnifying-glass-plus"></i></div><img
-                  src="assets/img/gallery/gallery_1_4.jpg" alt="gallery image" />
-              </a></div>
-            </div>
-          </div>
-          <div class="col-md-6 col-lg-2">
-            <div class="gallery-card">
-              <div class="box-img global-img"><a href="assets/img/gallery/gallery_1_5.jpg"
-                class="popup-image">
-                <div class="icon-btn"><i class="fa fa-magnifying-glass-plus"></i></div><img
-                  src="assets/img/gallery/gallery_1_5.jpg" alt="gallery image" />
-              </a></div>
-            </div>
-            <div class="gallery-card">
-              <div class="box-img global-img"><a href="assets/img/gallery/gallery_1_6.jpg"
-                class="popup-image">
-                <div class="icon-btn"><i class="fa fa-magnifying-glass-plus"></i></div><img
-                  src="assets/img/gallery/gallery_1_6.jpg" alt="gallery image" />
-              </a></div>
-            </div>
-          </div>
-          <div class="col-md-6 col-lg-2">
-            <div class="gallery-card">
-              <div class="box-img global-img"><a href="assets/img/gallery/gallery_1_7.jpg"
-                class="popup-image">
-                <div class="icon-btn"><i class="fa fa-magnifying-glass-plus"></i></div><img
-                  src="assets/img/gallery/gallery_1_7.jpg" alt="gallery image" />
-              </a></div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  )
 
   const EventSection = () => {
 
@@ -2055,16 +2187,6 @@ const SoftwareEngineeringCourse = () => {
             <h2 id="teamHeading" className="fw-bold display-6 mb-2 text-dark">
               Event & Learning Sessions
             </h2>
-            <div
-              aria-hidden="true"
-              className="mx-auto"
-              style={{
-                width: 120,
-                height: 12,
-                background:
-                  "radial-gradient(60px 6px at 60px 6px, rgba(2,6,23,.25), rgba(2,6,23,.12) 60%, rgba(0,0,0,0) 61%)",
-              }}
-            />
           </div>
           <Swiper
             spaceBetween={30}
@@ -2093,7 +2215,7 @@ const SoftwareEngineeringCourse = () => {
 
           >
             <SwiperSlide>
-              <div className="card">
+              <div className="card" style={{boxShadow: "rgba(0, 0, 0, 0.24) 0px 3px 8px"}}>
                 <div className="box-img global-img">
                   <img src="/assets/img/events/event_1_1.JPG" style={{ height: "250px" }} />
                 </div>
@@ -2107,7 +2229,7 @@ const SoftwareEngineeringCourse = () => {
             </SwiperSlide>
 
             <SwiperSlide>
-              <div className="card" >
+              <div className="card" style={{boxShadow: "rgba(0, 0, 0, 0.24) 0px 3px 8px"}}>
                 <div className="box-img global-img">
                   <img src="/assets/img/events/event_1_2.JPG" style={{ height: "250px" }} />
                 </div>
@@ -2123,7 +2245,7 @@ const SoftwareEngineeringCourse = () => {
             </SwiperSlide>
 
             <SwiperSlide>
-              <div className="card" >
+              <div className="card" style={{boxShadow: "rgba(0, 0, 0, 0.24) 0px 3px 8px"}}>
                 <div className="box-img global-img">
                   <img src="/assets/img/events/event_1_3.JPG" style={{ height: "250px" }} />
                 </div>
@@ -2138,7 +2260,7 @@ const SoftwareEngineeringCourse = () => {
               </div>
             </SwiperSlide>
             <SwiperSlide>
-              <div className="card">
+              <div className="card" style={{boxShadow: "rgba(0, 0, 0, 0.24) 0px 3px 8px"}}>
                 <div className="box-img global-img">
                   <img src="/assets/img/events/event_1_4.JPG" style={{ height: "250px" }} />
                 </div>
@@ -2151,7 +2273,7 @@ const SoftwareEngineeringCourse = () => {
               </div>
             </SwiperSlide>
             <SwiperSlide>
-              <div className="card" >
+              <div className="card" style={{boxShadow: "rgba(0, 0, 0, 0.24) 0px 3px 8px"}} >
                 <div className="box-img global-img">
                   <img src="/assets/img/events/event_1_5.JPG" style={{ height: "250px" }} />
                 </div>
@@ -2164,7 +2286,7 @@ const SoftwareEngineeringCourse = () => {
               </div>
             </SwiperSlide>
             <SwiperSlide>
-              <div className="card" >
+              <div className="card"  style={{boxShadow: "rgba(0, 0, 0, 0.24) 0px 3px 8px"}}>
                 <div className="box-img global-img">
                   <img src="/assets/img/events/event_1_6.JPG" style={{ height: "250px" }} />
                 </div>
@@ -2177,7 +2299,7 @@ const SoftwareEngineeringCourse = () => {
               </div>
             </SwiperSlide>
             <SwiperSlide>
-              <div className="card" >
+              <div className="card"  style={{boxShadow: "rgba(0, 0, 0, 0.24) 0px 3px 8px"}}>
                 <div className="box-img global-img">
                   <img src="/assets/img/events/event_1_7.jpg" style={{ height: "250px" }} />
                 </div>
@@ -2197,9 +2319,6 @@ const SoftwareEngineeringCourse = () => {
 
   return (
     <>
-
-      {/* Global theme overrides so Bootstrap's "primary" uses #73328e */}
-
 
       <style>{
 
@@ -2335,20 +2454,20 @@ const SoftwareEngineeringCourse = () => {
       <Section24x7 />
       <Highlights />
       <Slider />
-      <WhyUsSection />
       <CategorySection />
       <CoursesSection />
       <PlacementCurriculum />
       <Outcomes />
+      <WhyUsSection />
       <EventSection />
-      <Gallery />
+      <BenefitSection/>
       <TeamSection />
-      <FooterCTA />
-      <Testimonials />
       <UniqueFeatures />
       <FAQ />
       <Brands />
+      <Testimonials />
       <Colleges />
+      <FooterCTA />
     </>
   );
 };

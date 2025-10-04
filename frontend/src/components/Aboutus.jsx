@@ -125,7 +125,7 @@ const Aboutus = () => {
           @keyframes moveEllipse2 { 0%{ transform: translateX(0); } 100%{ transform: translateX(-18px); } }
           @keyframes moveCircle1 { 0%{ transform: scale(1); } 100%{ transform: scale(1.12); } }
         `}</style>
-        <div className="container" style={{paddingTop:"200px",paddingBottom:"50px"}}>
+        <div className="container" style={{paddingBlock:"40px"}}>
           <div className="row justify-content-center" style={{ position: 'relative', zIndex: 1 }}>
             <div className="col-lg-10 text-center">
               <h1 className="display-4 fw-bold mb-4 text-white">About TechCadd Virtual Academy</h1>

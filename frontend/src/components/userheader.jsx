@@ -1,7 +1,6 @@
-import React from 'react';
 import request from '../images/ritish2.png';
 import { Link } from 'react-router-dom';
-import { useState } from 'react';
+import { useState,useEffect } from 'react';
 
 const Userheader = () => {
   const [course, setcourse] = useState('');
@@ -18,6 +17,17 @@ const Userheader = () => {
     "Web Development",
     "Others",
   ];
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      const modalElement = document.getElementById("modalExample");
+      if (modalElement) {
+        const modal = new bootstrap.Modal(modalElement);
+        modal.show();
+      }
+    }, 1000);
+
+    return () => clearTimeout(timer); // cleanup
+  }, []);
   return (
     <div>
 
